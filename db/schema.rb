@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160314164758) do
+ActiveRecord::Schema.define(version: 20160314165737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,25 @@ ActiveRecord::Schema.define(version: 20160314164758) do
   end
 
   add_index "cars", ["user_id"], name: "index_cars_on_user_id", using: :btree
+
+  create_table "orders", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.string   "service_type"
+    t.float    "price"
+    t.string   "pick_up_place"
+    t.string   "return_place"
+    t.string   "service_address"
+    t.text     "comment"
+    t.integer  "customer_id"
+    t.integer  "groom_id"
+    t.integer  "car_id"
+    t.boolean  "status"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "orders", ["car_id"], name: "index_orders_on_car_id", using: :btree
 
   create_table "profils", force: :cascade do |t|
     t.string   "first_name"
@@ -77,6 +96,7 @@ ActiveRecord::Schema.define(version: 20160314164758) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "cars", "users"
+  add_foreign_key "orders", "cars"
   add_foreign_key "profils", "users"
   add_foreign_key "subscriptions", "users"
 end

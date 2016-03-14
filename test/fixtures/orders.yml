@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_date: 2016-03-14 17:57:37
+  end_date: 2016-03-14 17:57:37
+  service_type: MyString
+  price: 1.5
+  pick_up_place: MyString
+  return_place: MyString
+  service_address: MyString
+  comment: MyText
+  user_id: 
+  user_id: 
+  car_id: 
+  status: false
+
+two:
+  start_date: 2016-03-14 17:57:37
+  end_date: 2016-03-14 17:57:37
+  service_type: MyString
+  price: 1.5
+  pick_up_place: MyString
+  return_place: MyString
+  service_address: MyString
+  comment: MyText
+  user_id: 
+  user_id: 
+  car_id: 
+  status: false
