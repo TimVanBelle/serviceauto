@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160314165737) do
+ActiveRecord::Schema.define(version: 20160314171051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,29 @@ ActiveRecord::Schema.define(version: 20160314165737) do
 
   add_index "profils", ["user_id"], name: "index_profils_on_user_id", using: :btree
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "rating"
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "service_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "reviews", ["service_id"], name: "index_reviews_on_service_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
+
+  create_table "services", force: :cascade do |t|
+    t.float    "price"
+    t.text     "content"
+    t.string   "title"
+    t.integer  "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "services", ["order_id"], name: "index_services_on_order_id", using: :btree
+
   create_table "subscriptions", force: :cascade do |t|
     t.string   "title"
     t.float    "price"
@@ -98,5 +121,8 @@ ActiveRecord::Schema.define(version: 20160314165737) do
   add_foreign_key "cars", "users"
   add_foreign_key "orders", "cars"
   add_foreign_key "profils", "users"
+  add_foreign_key "reviews", "services"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "services", "orders"
   add_foreign_key "subscriptions", "users"
 end
