@@ -1,0 +1,3 @@
+class Prestataire < Profil
+
+end

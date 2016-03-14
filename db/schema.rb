@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160314171051) do
+ActiveRecord::Schema.define(version: 20160314173432) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20160314171051) do
     t.integer  "user_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "type"
   end
 
   add_index "profils", ["user_id"], name: "index_profils_on_user_id", using: :btree

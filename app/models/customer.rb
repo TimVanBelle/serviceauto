@@ -1,0 +1,3 @@
+class Customer < Profil
+
+end

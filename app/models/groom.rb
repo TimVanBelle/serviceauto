@@ -1,0 +1,3 @@
+class Groom < Profil
+
+end

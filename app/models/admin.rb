@@ -1,0 +1,4 @@
+class Admin < Profil
+
+
+end
