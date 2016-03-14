@@ -7,6 +7,8 @@ gem 'rails', '4.2.5.2'
 
 gem 'slim-rails'
 
+gem 'devise'
+
 gem 'pg'
 
 gem 'sass-rails', '~> 5.0'
