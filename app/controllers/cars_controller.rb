@@ -32,6 +32,14 @@ class CarsController < ApplicationController
 
   end
 
+   def destroy
+    if @car.destroy
+      redirect_to @customer
+    else
+      render :new
+    end
+  end
+
   private
   def find_car
     @car = Car.find(params[:id])
