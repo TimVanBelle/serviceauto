@@ -14,8 +14,6 @@ class OrdersController < ApplicationController
     end
   end
 
-  end
-
   def edit
     find_order
   end

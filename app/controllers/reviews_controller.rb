@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
     end
   end
 
-  end
+
 
   def edit
     find_review

@@ -14,7 +14,7 @@ class ProfilsController < ApplicationController
     end
   end
 
-  end
+
 
   def edit
     find_profil
