@@ -14,7 +14,6 @@ class CarsController < ApplicationController
     end
   end
 
-  end
 
   def edit
     find_car
