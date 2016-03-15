@@ -1,0 +1,32 @@
+
+h1 Editing Groom
+
+= simple_form_for(@groom) do |g|
+  = if @groom.errors.any?
+    div id="error_explanation"
+      h2 = pluralize(@groom.errors.count, "error")  prohibited this groom from being saved:
+
+      ul
+        - @groom.errors.full_messages.each do |message|
+          li = message
+
+
+
+  = f.input :first_name
+  = f.input :last_name
+  = f.input :address
+  = f.input :mail
+  = f.input :phone_number
+  = f.input :rib
+  = f.input :driving_license
+  = f.input :category
+  = f.input :picture
+  = f.input :picture_cache, as: :hidden
+
+
+
+
+  = link_to 'Show', @groom |
+  = link_to 'Back', grooms_path
+
+

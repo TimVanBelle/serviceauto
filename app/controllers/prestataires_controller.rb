@@ -1,4 +1,4 @@
-class PrestatairesController < ApplicationController
+class PrestataireController < ApplicationController
   def show
   end
 
