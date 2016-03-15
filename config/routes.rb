@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_for :users
 
   root "pages#index"
 
-  resources :customers, only: [:show] do
-    resources :card, only: [:new, :create, :show]
-    resources :orders, only: [:show]
+  resource :account, controller: "account"  do
+    resources :profil, only: [:show, :edit, :create, :new, :update, :delete]
   end
+
+
 end
