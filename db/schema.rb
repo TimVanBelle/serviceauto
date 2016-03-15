@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160315094544) do
+ActiveRecord::Schema.define(version: 20160315160356) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(version: 20160315094544) do
 
   add_index "cars", ["user_id"], name: "index_cars_on_user_id", using: :btree
 
+  create_table "grooms", force: :cascade do |t|
+    t.string   "name"
+    t.string   "picture"
+    t.string   "mail"
+    t.string   "rib"
+    t.string   "driving_licence"
+    t.string   "phone_number"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "orders", force: :cascade do |t|
     t.datetime "start_date"
     t.datetime "end_date"
@@ -37,7 +48,6 @@ ActiveRecord::Schema.define(version: 20160315094544) do
     t.string   "return_place"
     t.string   "service_address"
     t.text     "comment"
-    t.integer  "customer_id"
     t.integer  "groom_id"
     t.integer  "car_id"
     t.boolean  "status"
@@ -47,6 +57,24 @@ ActiveRecord::Schema.define(version: 20160315094544) do
 
   add_index "orders", ["car_id"], name: "index_orders_on_car_id", using: :btree
 
+  create_table "prestataire_services", force: :cascade do |t|
+    t.integer  "prestataire_id"
+    t.integer  "service_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "prestataire_services", ["prestataire_id"], name: "index_prestataire_services_on_prestataire_id", using: :btree
+  add_index "prestataire_services", ["service_id"], name: "index_prestataire_services_on_service_id", using: :btree
+
+  create_table "prestataires", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "picture"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "profils", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -54,11 +82,9 @@ ActiveRecord::Schema.define(version: 20160315094544) do
     t.string   "picture"
     t.string   "phone_number"
     t.string   "address"
-    t.string   "rib"
-    t.string   "driving_licence"
     t.integer  "user_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "type"
   end
 
@@ -122,6 +148,8 @@ ActiveRecord::Schema.define(version: 20160315094544) do
 
   add_foreign_key "cars", "users"
   add_foreign_key "orders", "cars"
+  add_foreign_key "prestataire_services", "prestataires"
+  add_foreign_key "prestataire_services", "services"
   add_foreign_key "profils", "users"
   add_foreign_key "reviews", "services"
   add_foreign_key "reviews", "users"
