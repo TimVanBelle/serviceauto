@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   root "pages#show"
 
   resource :account, controller: "account"  do
-    resources :profil, only: [:show, :edit, :create, :new, :update, :delete]
+    resources :profil, only: [:edit, :create, :new, :update, :delete]
     resources :car, only: [:show, :edit, :create, :new, :update, :delete]
-    resources :order, only: [:show, :edit, :create, :new, :update, :delete]
+    resources :orders, only: [:index, :show, :edit, :create, :new, :update, :delete]
   end
 
 
