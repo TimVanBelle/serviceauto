@@ -1,1 +1,20 @@
-h1 This is Car#New
+h1 Ajoutez une voiture
+
+div class="row"
+  = simple_form_for(@car) do |r|
+    div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 form-restroom"
+      div class="form-login"
+        h1 Add a restroom
+          = r.error_notification
+            div class="form-group"
+              = r.input :car_maker, { :maxlength => 25 }
+            div class="form-group"
+              = r.input :color
+            div class="form-group">
+              = r.input :mileage
+            div class="form-group"
+              = r.input :picture
+              = r.input :picture_cache, as: :hidden
+
+        = r.submit "Valider", :class => "btn btn-primary"
+

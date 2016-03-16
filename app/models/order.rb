@@ -1,7 +1,7 @@
 class Order < ActiveRecord::Base
   has_many :services
 
-  belongs_to :customer
+  belongs_to :user
   belongs_to :groom
   belongs_to :car
   belongs_to :prestataire

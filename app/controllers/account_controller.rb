@@ -1,6 +1,8 @@
 class AccountController < ApplicationController
   def show
+    @user = current_user
     @profil = current_user.profils.first
-    @car = current_user.cars
+    @cars = current_user.cars
+    @orders = current_user.cars.map(&:order)
   end
 end

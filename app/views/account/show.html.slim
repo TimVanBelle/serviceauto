@@ -1,13 +1,50 @@
 h1
-  | Profil de :
-  = @profil.first_name
-
-h2 Vos Informations :
+  ' Profil de : #{@profil.first_name} #{@profil.last_name}
 
 
 
+div
+  h2 Vos Informations :
 
-h2 Vos Voitures :
+  p = @profil.picture
+  p
+  ' Prénom : #{@profil.first_name}
+
+  p
+  ' Nom : #{@profil.last_name}
+
+  p
+  ' E-mail : #{@user.email}
 
 
-h2 Vos Commandes :
+div
+  h2 Vos Voitures :
+
+  - @cars.each do |car|
+    | Marque :
+    = car.car_maker
+    | Couleur :
+    = car.color
+    | Kilométrage :
+    = car.mileage
+    | Plaque d'immatriculation :
+    = car.registration_plate
+
+  = link_to "Ajouter une voiture", new_account_car_path, class: "btn-primary"
+
+
+
+
+div
+  h2 Vos Commandes :
+
+  - @orders.each do |order|
+    | Date et lieu de prise en charge :
+    = order.start_date
+    = order.pick_up_place
+    | Date et lieu de retour du véhicule :
+    = order.end_date
+    = order.return_place
+    | Type de service :
+    = order.service_type
+
