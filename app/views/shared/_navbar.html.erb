@@ -19,8 +19,13 @@
 
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to do %>
+              <%= link_to 'account#show' do %>
                 <i class="fa fa-user"></i> <%= t ".profile", default: "Profile" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to account_orders_path do %>
+                <i class="fa fa-user"></i> <%= t ".profile", default: "My Orders" %>
               <% end %>
             </li>
             <li>
@@ -34,10 +39,8 @@
               <% end %>
             </li>
           </ul>
-          <%= link_to t(".top_call_to_action", default: "Add Restroom"),  "#", class: "navbar-wagon-item navbar-wagon-link" %>
-          <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>
-          <% end %>
+          <%= link_to t(".top_call_to_action", default: "New Orders"),  "#", class: "navbar-wagon-item navbar-wagon-link" %>
+          <%= image_tag 'profil.jpg', class: "img-circle  avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         </div>
       </div>
 
