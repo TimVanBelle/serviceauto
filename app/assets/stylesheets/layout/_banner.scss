@@ -10,8 +10,12 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  line-height: 1.1;
+  // line-height: 1.1;
   text-rendering: optimizelegibility;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 0;
 }
 .banner h1 {
   font-size: 50px;

@@ -1,23 +1,28 @@
 
-== render partial: "shared/banner"
-/ div class= "wrapper-grey"
-/   div class="banner-content"
+/ == render partial: "shared/banner"
+.banner
+  .banner-content
+    .container
+      .row
+        .col-lg-12.col-xs-12
+          h1 PROFITEZ DU MEILLEUR
+          h2 pour tout le reste, il y a Alfred ;-)
+          br
+          = link_to "Mode d'emploi", "#banner2", class: "btn btn-default"
 
-/ div class="container" id="choice"
-/  div class="row"
-/     div class="col-lg-12 col-sm-12"
-/       h1 Choisissez un pont
-
-/   div class="container"
-/    div class= "row"
-/     div class="col-lg-6 col-sm-6"
-/        @services.each do |service|
-/         div class= "row"
-/           div class="col-lg-6 col-sm-6"
-/             == cl_image_tag service.photo, height: 100, width: 200, crop: :fill
-/           div class="col-lg-6 col-sm-6"
-/             h3= link_to service.name, service_path(service)
-
-
+      .row.card-home
+          h2 Que peut faire Alfred pour vous aujourd'hui ?
+          .col-xs-12.col-sm-4
+            = link_to "laver ma voiture", "new.html", class: "h4"
+          .col-xs-12.col-sm-4
+            h4 Faire l'entretien de ma voiture
+          .col-xs-12.col-sm-4
+            h4 Gérer la remise de clé
+          .col-xs-12.col-sm-4
+            h4 Faire le plein d'essence
+          .col-xs-12.col-sm-4
+            h4 Faire réparer ma voiture
+          .col-xs-12.col-sm-4
+            h4 Demandez nous l'impossible
 
 
