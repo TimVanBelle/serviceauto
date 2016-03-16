@@ -95,3 +95,16 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+#connexion {
+  border: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  padding: 5px 10px;
+}
+
+#connexion:hover {
+  background: gray;
+  opacity: 0.5;
+  color: white;
+}
