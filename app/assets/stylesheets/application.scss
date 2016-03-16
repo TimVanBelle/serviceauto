@@ -10,6 +10,14 @@
 
 // Your CSS
 @import "layout/index";
+@import "layout/banner";
+@import "layout/footer";
+@import "layout/navbar";
+@import "layout/utilities";
+
 @import "components/index";
+
 @import "pages/index";
+@import "pages/home";
+
 @import "vendor/index";
