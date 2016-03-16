@@ -19,13 +19,15 @@
     color: grey;
     border-radius: 5px;
  }
- // .checkbox input {
- //  margin: 0;
- //  position: initial;
- //  margin-right: 4px;
- //  margin-top: 10px;
- // }
- //
+
+ h2 {
+    color: grey
+ }
+
+ P {
+  color:grey
+ }
+
 
  .btn {
   background-color: #5CA4A9;
@@ -37,13 +39,12 @@
    background: transparent;
    border: none;
    border-bottom: solid 1px white;
-   color:white;
    box-shadow: none;
    outline: non
  }
 #log {
  border: 1px solid white;
- color: white;
+ color: black;
  border-radius: 20px;
  padding-left:20px;
  padding-right: 20px;
