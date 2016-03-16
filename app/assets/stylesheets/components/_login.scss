@@ -16,7 +16,7 @@
     height: 48px;
     font-size: 14px;
     background-color: rgba(255,255,255,0.35);
-    color: grey;
+    color: white;
     border-radius: 5px;
  }
  // .checkbox input {
@@ -31,6 +31,12 @@
   background-color: #5CA4A9;
   }
 
+  h2 {
+    color: white;
+  }
+p {
+    color: white;
+  }
 }
 
  input:focus, textarea:focus {
@@ -43,7 +49,7 @@
  }
 #log {
  border: 1px solid white;
- color: white;
+ color: grey;
  border-radius: 20px;
  padding-left:20px;
  padding-right: 20px;
