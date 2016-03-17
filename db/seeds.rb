@@ -16,11 +16,20 @@ Car.create!(registration_plate: '125 AB 123', car_maker: 'peugeot', color: 'roug
 Car.create!(registration_plate: '126 AB 123', car_maker: 'audi', color: 'noire', mileage: '70000')
 Car.create!(registration_plate: '127 AB 123', car_maker: 'BMW', color: 'gris', mileage: '60000')
 
-Order.create!(start_date: Date.today, end_date: Date.today + 1, service_type: 'pneumatiques', price: '80', pick_up_place: 'place du marché', return_place: 'place du marché', service_address: 'rue du garagiste', comment: ' ', status: '0')
-Order.create!(start_date: Date.today, end_date: Date.today + 1, service_type: 'clés', price: '15', pick_up_place: 'place 1', return_place: 'place du marché', service_address: 'rue des clés', comment: ' ', status: '0')
-Order.create!(start_date: Date.today, end_date: Date.today + 1, service_type: 'pneumatiques', price: '80', pick_up_place: 'place 2', return_place: 'place 2', service_address: 'rue 6', comment: ' ', status: '0')
-Order.create!(start_date: Date.today, end_date: Date.today + 1, service_type: 'vidange', price: '30', pick_up_place: 'place 3', return_place: 'place 3', service_address: 'place de la victoire', comment: ' ', status: '0')
-Order.create!(start_date: Date.today, end_date: Date.today + 1, service_type: 'revision', price: '120', pick_up_place: 'place 4', return_place: 'place 4', service_address: 'place du marché', comment: ' ', status: '0')
+Service.create!(title: 'Vidange', price: 100, content: 'CCCCCCCCCCCCC')
+Service.create!(title: 'Révision', price: 120, content: 'Rrrrrrrrrrr')
+Service.create!(title: 'Clé', price: 134, content: 'remise de clé')
+
+OrderStatus.create!(name: "In Progress")
+OrderStatus.create!(name: "Placed")
+OrderStatus.create!(name: "Shipped")
+OrderStatus.create!(name: "Cancelled")
+
+Order.create!(start_date: Date.today, end_date: Date.today + 1, service_type: 'pneumatiques', price: '80', pick_up_place: 'place du marché', return_place: 'place du marché', service_address: 'rue du garagiste', comment: ' ')
+Order.create!(start_date: Date.today, end_date: Date.today + 1, service_type: 'clés', price: '15', pick_up_place: 'place 1', return_place: 'place du marché', service_address: 'rue des clés', comment: ' ')
+Order.create!(start_date: Date.today, end_date: Date.today + 1, service_type: 'pneumatiques', price: '80', pick_up_place: 'place 2', return_place: 'place 2', service_address: 'rue 6', comment: ' ')
+Order.create!(start_date: Date.today, end_date: Date.today + 1, service_type: 'vidange', price: '30', pick_up_place: 'place 3', return_place: 'place 3', service_address: 'place de la victoire', comment: ' ')
+Order.create!(start_date: Date.today, end_date: Date.today + 1, service_type: 'revision', price: '120', pick_up_place: 'place 4', return_place: 'place 4', service_address: 'place du marché', comment: ' ')
 
 
 flo = User.create!(email: 'flo@flo.flo', password: 'flofloflo1')
@@ -40,3 +49,8 @@ p2.save
 p3.save
 p4.save
 p5.save
+
+
+
+
+
