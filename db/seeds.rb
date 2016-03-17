@@ -11,9 +11,12 @@ Groom.create!(name: 'Louise', mail:'groom3@tata.com', rib:'234', driving_licence
 Groom.create!(name: 'Elliot', mail:'groom4@tata.com', rib:'567', driving_licence:'driving4', phone_number:'0603453404', picture:' ')
 Groom.create!(name: 'Ector', mail:'groom5@tata.com', rib:'876', driving_licence:'driving5', phone_number:'0603453405', picture:' ')
 
-Service.create!(title: 'Vidange', price: 100, content: 'CCCCCCCCCCCCC')
-Service.create!(title: 'Révision', price: 120, content: 'Rrrrrrrrrrr')
-Service.create!(title: 'Clé', price: 134, content: 'remise de clé')
+Service.create!(title: 'Vidange', price: 100, content: 'CCCCCCCCCCCCC', category: 'entretien')
+Service.create!(title: 'Révision', price: 120, content: 'Rrrrrrrrrrr', category: 'entretien')
+Service.create!(title: 'Lavage à la main', price: 134, content: 'lavage avec des petites mains', category: 'lavage')
+Service.create!(title: 'Entretien intermediaire', price: 134, content: 'entretien avec 20 contrôles', category: 'entretien')
+Service.create!(title: 'Lavage Calinauto', price: 134, content: 'Lavage impeccable', category: 'lavage')
+Service.create!(title: 'carte grise en prefecture', price: 134, content: 'remise de clé', category: 'carte grise')
 
 OrderStatus.create!(name: "In Progress")
 OrderStatus.create!(name: "Placed")
@@ -26,11 +29,11 @@ Car.create!(registration_plate: '125 AB 123', car_maker: 'peugeot', model: 'tt',
 Car.create!(registration_plate: '126 AB 123', car_maker: 'audi', model: 'tt', color: 'noire', mileage: '70000')
 Car.create!(registration_plate: '127 AB 123', car_maker: 'BMW', model: 'tt', color: 'gris', mileage: '60000')
 
-Order.create!(start_date: Date.today, end_date: Date.today + 1, service_type: 'pneumatiques', price: '80', pick_up_place: 'place du marché', return_place: 'place du marché', service_address: 'rue du garagiste', comment: ' ', status: '0', car_id: '10' , groom_id: '1')
-Order.create!(start_date: Date.today, end_date: Date.today + 1, service_type: 'clés', price: '15', pick_up_place: 'place 1', return_place: 'place du marché', service_address: 'rue des clés', comment: ' ', status: '0', car_id: '10' , groom_id: '1')
-Order.create!(start_date: Date.today, end_date: Date.today + 1, service_type: 'pneumatiques', price: '80', pick_up_place: 'place 2', return_place: 'place 2', service_address: 'rue 6', comment: ' ', status: '0', car_id: '10' , groom_id: '1')
-Order.create!(start_date: Date.today, end_date: Date.today + 1, service_type: 'vidange', price: '30', pick_up_place: 'place 3', return_place: 'place 3', service_address: 'place de la victoire', comment: ' ', status: '0', car_id: '10' , groom_id: '1')
-Order.create!(start_date: Date.today, end_date: Date.today + 1, service_type: 'revision', price: '120', pick_up_place: 'place 4', return_place: 'place 4', service_address: 'place du marché', comment: ' ', status: '0', car_id: '10' , groom_id: '1')
+Order.create!(start_date: Date.today, end_date: Date.today + 1, service_type: 'pneumatiques', price: '80', pick_up_place: 'place du marché', return_place: 'place du marché', service_address: 'rue du garagiste', comment: ' ', status: '0', car_id: '3' , groom_id: '1')
+Order.create!(start_date: Date.today, end_date: Date.today + 1, service_type: 'clés', price: '15', pick_up_place: 'place 1', return_place: 'place du marché', service_address: 'rue des clés', comment: ' ', status: '0', car_id: '2' , groom_id: '1')
+Order.create!(start_date: Date.today, end_date: Date.today + 1, service_type: 'pneumatiques', price: '80', pick_up_place: 'place 2', return_place: 'place 2', service_address: 'rue 6', comment: ' ', status: '0', car_id: '3' , groom_id: '1')
+Order.create!(start_date: Date.today, end_date: Date.today + 1, service_type: 'vidange', price: '30', pick_up_place: 'place 3', return_place: 'place 3', service_address: 'place de la victoire', comment: ' ', status: '0', car_id: '5' , groom_id: '1')
+Order.create!(start_date: Date.today, end_date: Date.today + 1, service_type: 'revision', price: '120', pick_up_place: 'place 4', return_place: 'place 4', service_address: 'place du marché', comment: ' ', status: '0', car_id: '1' , groom_id: '1')
 
 
 flo = User.create!(email: 'flo@flo.flo', password: 'flofloflo1')
