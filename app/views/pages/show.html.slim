@@ -15,20 +15,33 @@
 
 
       .row.card-home
-          h2 Que peut faire Alfred pour vous aujourd'hui ?
-          .col-xs-12.col-sm-4
-            = link_to "laver ma voiture", "new.html", class: "h4"
-          .col-xs-12.col-sm-4
-            h4 Faire l'entretien de ma voiture
-          .col-xs-12.col-sm-4
-            h4 Gérer la remise de clé
-          .col-xs-12.col-sm-4
-            h4 Faire le plein d'essence
-          .col-xs-12.col-sm-4
-            h4 Faire réparer ma voiture
-          .col-xs-12.col-sm-4
-            h4 Demandez nous l'impossible
 
+        .col-lg-12.col-xs-12
+          h4 Que peut faire Alfred pour vous aujourd'hui ?
 
-
+        .col-xs-offset-4.col-xs-4
+          / - @cars.each do |car|
+          / p car.car_maker
+          / / form
+          /   select.form-control name="order.prestation_type"
+          /     option value="entretien"
+          /       p Faire l'entretien de ma voiture
+          /       = link_to order.type, orders_path(new)
+          form
+            select.form-control name="prestation"
+              option value="entretien"
+                p Faire l'entretien de ma voiture
+              option value="lavage"
+                p laver ma voiture
+              option value="essence"
+                p Faire le plein dessence
+              option value="réparation"
+                p Faire réparer ma voiture
+              option value="clé"
+                p Gérer la remise de clé
+              option value="impossible"
+                p Demandez nous l'impossible
+        .col-xs-3
+          / = link_to "Valider", new_order_path(order), class: "btn btn-primary"
+          button type="submit" class="btn btn-default" valider
 
