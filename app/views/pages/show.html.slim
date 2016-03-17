@@ -13,7 +13,15 @@
       .row.card-home
         .col-lg-12.col-xs-12
           h4 Que peut faire Alfred pour vous aujourd'hui ?
+
         .col-xs-offset-4.col-xs-4
+          / - @cars.each do |car|
+          / p car.car_maker
+          / / form
+          /   select.form-control name="order.prestation_type"
+          /     option value="entretien"
+          /       p Faire l'entretien de ma voiture
+          /       = link_to order.type, orders_path(new)
           form
             select.form-control name="prestation"
               option value="entretien"
@@ -29,4 +37,5 @@
               option value="impossible"
                 p Demandez nous l'impossible
         .col-xs-3
+          / = link_to "Valider", new_order_path(order), class: "btn btn-primary"
           button type="submit" class="btn btn-default" valider
