@@ -5,10 +5,11 @@ class CarsController < ApplicationController
   end
 
   def create
-    @car = @car.build(create_params)
+    @car = Car.new(create_params)
 
-    if @car.save
-      redirect_to @car
+    @car.user = current_user
+    if @car.save!
+      redirect_to account_path
     else
       render :new
     end
@@ -45,6 +46,6 @@ class CarsController < ApplicationController
   end
 
   def create_params
-    params.require(:car).permit(:registration_plate, :car_maker, :color, :mileage)
+    params.require(:car).permit(:registration_plate, :model, :car_maker, :color, :mileage)
   end
 end

@@ -3,7 +3,7 @@ class Car < ActiveRecord::Base
 
   belongs_to :user
 
-  validates_presence_of :registration_plate, :car_maker, :color
+  validates_presence_of :car_maker, :color, :model
 
 
 end

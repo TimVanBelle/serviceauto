@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = @review.build(create_params)
+    @review = Review.new(create_params)
 
     if @review.save
       redirect_to @review
