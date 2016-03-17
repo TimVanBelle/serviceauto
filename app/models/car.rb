@@ -1,5 +1,5 @@
 class Car < ActiveRecord::Base
-  has_many :orders
+  has_many :orders, dependent: :nullify
 
   belongs_to :user
 

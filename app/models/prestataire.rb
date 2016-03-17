@@ -1,3 +1,5 @@
 class Prestataire < ActiveRecord::Base
-  has_and_belongs_to_many :services
+  has_many :prestataire_services
+  has_many :services, through: :prestataire_services, dependent: :nullify
+
 end
