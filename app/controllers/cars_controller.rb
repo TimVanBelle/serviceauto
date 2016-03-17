@@ -19,11 +19,11 @@ class CarsController < ApplicationController
 
 
   def edit
-
+    authorize @car
   end
 
   def update
-
+    authorize @car
     if @car.update_attributes(create_params)
     else
       render "/account"
@@ -35,6 +35,7 @@ class CarsController < ApplicationController
   end
 
    def destroy
+    authorize @car
     if @car.delete
       redirect_to account_path
     else
