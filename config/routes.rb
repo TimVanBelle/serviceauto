@@ -17,15 +17,18 @@ Rails.application.routes.draw do
 
 
   resource :account, controller: "account"  do
+    resources :profil, only: [:show, :index]
 
-  resources :profil, only: [:edit, :create, :new, :update, :delete]
-  resources :cars, only: [:index, :show, :edit, :update, :delete]
-  resources :orders, only: [:index, :show, :edit, :create, :new, :update, :delete]
+    resources :cars, only: [:index, :show]
+    resources :orders, only: [:index, :show, :edit, :update, :destroy]
   end
+
+
   resources :services, only: [:index]
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
-  resources :cars, only: [:new, :create]
+  resources :cars, only: [:new, :create, :edit, :update, :destroy]
   resources :orders, only: [:new, :create]
+  resources :profil, only: [:create, :new, :update, :destroy]
 
 end

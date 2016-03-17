@@ -55,7 +55,8 @@ class Devise::RegistrationsController < DeviseController
         set_flash_message :notice, flash_key
       end
       sign_in resource_name, resource, bypass: true
-      respond_with resource, location: after_update_path_for(resource)
+      #respond_with resource, location: after_update_path_for(resource)
+      redirect_to account_path(resource)
     else
       clean_up_passwords resource
       respond_with resource
@@ -140,7 +141,8 @@ class Devise::RegistrationsController < DeviseController
   end
 
   def account_update_params
-    devise_parameter_sanitizer.sanitize(:account_update)
+    profils_attributes = params.require(:user).require(:profils_attributes)
+    devise_parameter_sanitizer.sanitize(:account_update).merge(profils_attributes: profils_attributes)
   end
 
   def translation_scope
