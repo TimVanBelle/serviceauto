@@ -11,6 +11,15 @@ Groom.create!(name: 'Louise', mail:'groom3@tata.com', rib:'234', driving_licence
 Groom.create!(name: 'Elliot', mail:'groom4@tata.com', rib:'567', driving_licence:'driving4', phone_number:'0603453404', picture:' ')
 Groom.create!(name: 'Ector', mail:'groom5@tata.com', rib:'876', driving_licence:'driving5', phone_number:'0603453405', picture:' ')
 
+Service.create!(title: 'Vidange', price: 100, content: 'CCCCCCCCCCCCC')
+Service.create!(title: 'Révision', price: 120, content: 'Rrrrrrrrrrr')
+Service.create!(title: 'Clé', price: 134, content: 'remise de clé')
+
+OrderStatus.create!(name: "In Progress")
+OrderStatus.create!(name: "Placed")
+OrderStatus.create!(name: "Shipped")
+OrderStatus.create!(name: "Cancelled")
+
 Car.create!(registration_plate: '123 AB 123', car_maker: 'audi', model: 'tt', color: 'noire', mileage: '10000')
 Car.create!(registration_plate: '124 AB 123', car_maker: 'renault', model: 'tt', color: 'bleu', mileage: '12000')
 Car.create!(registration_plate: '125 AB 123', car_maker: 'peugeot', model: 'tt', color: 'rouge', mileage: '50000')
@@ -41,3 +50,8 @@ p2.save
 p3.save
 p4.save
 p5.save
+
+
+
+
+
