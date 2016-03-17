@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160315160356) do
+ActiveRecord::Schema.define(version: 20160317142343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160315160356) do
     t.integer  "user_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.string   "model"
   end
 
   add_index "cars", ["user_id"], name: "index_cars_on_user_id", using: :btree
@@ -37,6 +38,25 @@ ActiveRecord::Schema.define(version: 20160315160356) do
     t.string   "phone_number"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "order_items", force: :cascade do |t|
+    t.integer  "service_id"
+    t.integer  "order_id"
+    t.decimal  "unit_price",  precision: 12, scale: 3
+    t.integer  "quantity"
+    t.decimal  "total_price", precision: 12, scale: 3
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+  end
+
+  add_index "order_items", ["order_id"], name: "index_order_items_on_order_id", using: :btree
+  add_index "order_items", ["service_id"], name: "index_order_items_on_service_id", using: :btree
+
+  create_table "order_statuses", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "orders", force: :cascade do |t|
@@ -53,6 +73,9 @@ ActiveRecord::Schema.define(version: 20160315160356) do
     t.boolean  "status"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.float    "subtotal"
+    t.float    "total"
+    t.float    "tax"
   end
 
   add_index "orders", ["car_id"], name: "index_orders_on_car_id", using: :btree
@@ -110,6 +133,7 @@ ActiveRecord::Schema.define(version: 20160315160356) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.time     "service_duration"
+    t.string   "category"
   end
 
   add_index "services", ["order_id"], name: "index_services_on_order_id", using: :btree
@@ -147,6 +171,8 @@ ActiveRecord::Schema.define(version: 20160315160356) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "cars", "users"
+  add_foreign_key "order_items", "orders"
+  add_foreign_key "order_items", "services"
   add_foreign_key "orders", "cars"
   add_foreign_key "prestataire_services", "prestataires"
   add_foreign_key "prestataire_services", "services"
