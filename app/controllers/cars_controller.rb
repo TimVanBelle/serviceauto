@@ -4,11 +4,13 @@ class CarsController < ApplicationController
 
   def new
     @car = Car.new
+    authorize @car
   end
 
   def create
-    @car = Car.new(create_params)
 
+    @car = Car.new(create_params)
+    authorize @car
     @car.user = current_user
     if @car.save!
       redirect_to account_path
