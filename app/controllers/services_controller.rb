@@ -1,4 +1,5 @@
 class ServicesController < ApplicationController
+  skip_after_action :verify_policy_scoped
   def index
     if params[:prestation]
       search = params[:prestation]
