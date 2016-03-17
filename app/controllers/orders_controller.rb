@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = @order.build(create_params)
+    @order = Order.new(create_params)
 
     if @order.save
       redirect_to @order

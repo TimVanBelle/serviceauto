@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20160316190941) do
     t.integer  "user_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.string   "model"
   end
 
   add_index "cars", ["user_id"], name: "index_cars_on_user_id", using: :btree

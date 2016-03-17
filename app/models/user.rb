@@ -9,4 +9,14 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  def orders
+    orders = []
+    self.cars.each do |car|
+      car.orders.each do |order|
+        orders << order
+      end
+    end
+    orders
+  end
 end

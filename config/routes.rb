@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
 
   resource :account, controller: "account"  do
+
   resources :profil, only: [:edit, :create, :new, :update, :delete]
   resources :cars, only: [:index, :show, :edit, :update, :delete]
   resources :orders, only: [:index, :show, :edit, :create, :new, :update, :delete]
@@ -25,4 +26,6 @@ Rails.application.routes.draw do
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
   resources :cars, only: [:new, :create]
-  end
+  resources :orders, only: [:new, :create]
+
+end
