@@ -11,6 +11,8 @@
   <%= link_to "Les tarifs", "#", class: "navbar-wagon-item navbar-wagon-link" %>
   <%= link_to "Devenir Alf", "#", class: "navbar-wagon-item navbar-wagon-link" %>
 
+
+
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
       <!-- Profile picture and dropdown -->
@@ -109,5 +111,6 @@
       </div>
 
   <% end %>
+  <%= render 'layouts/cart_text' %>
 
 </div>
