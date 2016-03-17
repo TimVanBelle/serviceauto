@@ -3,6 +3,6 @@ class AccountController < ApplicationController
     @user = current_user
     @profil = current_user.profils.first
     @cars = current_user.cars
-    @orders = current_user.cars.map(&:order)
+    @orders = current_user.orders
   end
 end

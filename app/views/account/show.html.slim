@@ -19,7 +19,6 @@ div
 
 div
   h2 Vos Voitures :
-
   - @cars.each do |car|
     | Marque :
     = car.car_maker
@@ -30,7 +29,7 @@ div
     | Plaque d'immatriculation :
     = car.registration_plate
 
-  = link_to "Ajouter une voiture", new_account_car_path, class: "btn-primary"
+  = link_to "Ajouter une voiture", new_car_path, class: "btn btn-primary"
 
 
 
@@ -47,4 +46,6 @@ div
     = order.return_place
     | Type de service :
     = order.service_type
+
+  = link_to "Ajouter une course", new_order_path, class: "btn btn-primary"
 
