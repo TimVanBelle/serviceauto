@@ -1,5 +1,7 @@
 class CarsController < ApplicationController
 
+  before_action :find_car, only: [:edit, :show, :update, :destroy]
+
   def new
     @car = Car.new
   end
@@ -17,14 +19,14 @@ class CarsController < ApplicationController
 
 
   def edit
-    find_car
+
   end
 
   def update
-    find_car
+
     if @car.update_attributes(create_params)
     else
-      render :edit
+      render "/account"
     end
   end
 
@@ -33,8 +35,8 @@ class CarsController < ApplicationController
   end
 
    def destroy
-    if @car.destroy
-      redirect_to @customer
+    if @car.delete
+      redirect_to account_path
     else
       render :new
     end

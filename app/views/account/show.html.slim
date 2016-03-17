@@ -16,18 +16,25 @@ div
   p
   ' E-mail : #{@user.email}
 
+  = link_to "Modifier", edit_user_registration_path(@user), class: "btn btn-primary"
+
 
 div
   h2 Vos Voitures :
   - @cars.each do |car|
-    | Marque :
-    = car.car_maker
-    | Couleur :
-    = car.color
-    | Kilométrage :
-    = car.mileage
-    | Plaque d'immatriculation :
-    = car.registration_plate
+    div
+      p
+      ' Marque : #{car.car_maker}
+      p
+      ' Modèle : #{car.model}
+      p
+      ' Couleur : #{car.color}
+      p
+      ' Kilométrage : #{car.mileage}
+      p
+      ' Plaque d'immatriculation : #{car.registration_plate}
+      = link_to "Modifier", edit_car_path(car), class: "btn btn-primary"
+      = button_to "Supprimer ma voiture", car_path(car), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger"
 
   = link_to "Ajouter une voiture", new_car_path, class: "btn btn-primary"
 
