@@ -1,12 +1,13 @@
 class Order < ActiveRecord::Base
-  has_many :services
+  has_many :services, dependent: :nullify
+  has_many :order_items, dependent: :destroy
 
   belongs_to :user
   belongs_to :groom
   belongs_to :car
   belongs_to :prestataire
   belongs_to :order_status
-  has_many :order_items
+
   #before_create :set_order_status
   before_save :update_subtotal
 

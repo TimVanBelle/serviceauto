@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
-  has_many :profils
-  has_many :reviews
-  has_many :cars
+  has_many :profils, dependent: :destroy
+  has_many :reviews, dependent: :nullify
+  has_many :cars, dependent: :destroy
 
   accepts_nested_attributes_for :profils
 
