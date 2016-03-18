@@ -10,14 +10,14 @@ class OrderItemsPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    self
   end
 
   def update?
-    true
+    self
   end
 
   def destroy?
-    true
+    self
   end
 end
