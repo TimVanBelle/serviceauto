@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
 
   def index
-    @orders = Order.all
+    @orders = policy_scope(Order)
   end
 
   def new
