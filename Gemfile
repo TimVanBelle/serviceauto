@@ -40,7 +40,7 @@ gem 'autoprefixer-rails'
 
 gem "pundit"
 gem "rails_admin"
-gem "rails_admin_pundit", :github => "sudosu/rails_admin_pundit"
+#gem "rails_admin_pundit", :github => "sudosu/rails_admin_pundit"
 
 
 group :production do
