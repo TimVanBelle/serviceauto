@@ -16,7 +16,7 @@
           </div>
           <div class="col-xs-8 text-right">
             <div class="btn-group">
-              <%= f.submit "Modifier", class: "btn btn-primary" %>
+              <!-- <%= f.submit "Modifier", class: "btn btn-primary" %> -->
               <%= link_to "Supprimer", order_item, { data: { confirm: "Etes vous sûr de vouloir supprimer le produit '#{order_item.service.title}' de votre panier?" }, method: :delete, remote: true, class: "btn btn-primary" } %>
             </div>
           </div>
