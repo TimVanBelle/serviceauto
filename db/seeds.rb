@@ -42,7 +42,7 @@ tim = User.create!(email: 'tim@flo.flo', password: 'flofloflo3')
 ben = User.create!(email: 'ben@flo.flo', password: 'flofloflo4')
 nico = User.create!(email: 'nico@flo.flo', password: 'flofloflo5')
 
-p1 = flo.profils.build(first_name: 'name1', last_name: 'name11',address: '13 rue de la Gaité 59100 Roubaix', picture: ' ', phone_number: '03 20 12 45 45')
+p1 = flo.profils.build(first_name: 'Sam', last_name: 'Bibbi',address: '13 rue de la Gaité 59100 Roubaix', picture: ' ', phone_number: '03 20 12 45 45')
 p2 = sam.profils.build(first_name: 'name2', last_name: 'name13',address: '13 rue de la Gaité 59100 Roubaix', picture: ' ', phone_number: '03 20 12 45 45')
 p3 = tim.profils.build(first_name: 'name3', last_name: 'name15',address: '13 rue de la Gaité 59100 Roubaix', picture: ' ', phone_number: '03 20 12 45 45')
 p4 = ben.profils.build(first_name: 'name4', last_name: 'name19',address: '13 rue de la Gaité 59100 Roubaix', picture: ' ', phone_number: '03 20 12 45 45')

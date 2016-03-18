@@ -8,4 +8,9 @@ class Service < ActiveRecord::Base
   has_many :order_items, dependent: :destroy
 
   #default_scope { where(active: true) }
+  #
+
+  def self.categories
+    self.select(:category).uniq.map(&:category)
+  end
 end
