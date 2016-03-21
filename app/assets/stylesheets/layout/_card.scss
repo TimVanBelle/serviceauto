@@ -1,3 +1,4 @@
+
 @mixin card {
   height: 275px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
@@ -8,6 +9,7 @@
   display: flex;
   align-item: center;
   flex-item: 0 0 20%;
+  margin-top: 50px
 }
 
 

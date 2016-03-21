@@ -1,9 +1,17 @@
-<h1> Vos reservations</h1>
-
+<div class=carts>
+<h3 class="text-center">Vos reservations </h3>
 
 <div class="shopping-cart">
   <%= render "shopping_cart" %>
 </div>
 
 <%= render 'layouts/cart_text' %>
-<li><%= link_to "Alfred peut encore faire quelque chose pour moi", services_path %></li>
+
+
+<h4 class="text-center"><%= link_to "J'ai encore quelque chose à demandé à Alfred ", services_path%></h4>
+
+</div>
+
+<%= button_to "Valider", carts_path, method: 'put' %>
+
+

@@ -6,11 +6,11 @@ class OrderItemsPolicy < ApplicationPolicy
   end
 
   def show?
-    user
+    true
   end
 
   def create?
-    self
+    true
   end
 
   def update?

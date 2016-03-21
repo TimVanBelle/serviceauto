@@ -6,22 +6,21 @@
       .row
         .col-lg-12.col-xs-12
           h1 PROFITEZ DU MEILLEUR
-          h2 pour tout le reste, il y a Alfred ;-)
+          h4 réservez les services de notre consierge auto Alfred
           br
           = link_to "Mode d'emploi", "#banner2", class: "btn btn-default"
-
       .row.card-home
         .col-lg-12.col-xs-12
-          h4 Que peut faire Alfred pour vous aujourd'hui ?
         form action="#{services_path}"
           .col-xs-offset-3.col-xs-8
             select.form-control name="prestation" id="prestation" onchange="submit()"
               option disabled="" selected="" value=""
-                | - Choisissez ce que Alfred peut faire pour vous -
+                | - Choisissez ce qu'Alfred peut faire pour vous ;-)!
               - @categories.each do |category|
                 option
                   = category
           .col-xs-3 style=("\n    text-align: left;\n")
+
 
 
 .container_banner2
@@ -69,3 +68,4 @@
     .row
       .col-lg-12.col-xs-12 style=("padding: 10px 0 10px 0; margin-bottom: -100px;")
         p * pour les prestations dont les prix sont connus a postériori, comme le plein d'essence. Refacturation à prix coûtant
+

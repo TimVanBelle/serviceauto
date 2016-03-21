@@ -1,4 +1,4 @@
-<%- if controller_name != 'sessions' %>
+<%- if controller_name != 'sessions'  && controller_name != 'passwords' %>
   <%= link_to "Me connecter", new_session_path(resource_name), class: 'links' %><br />
 <% end -%>
 

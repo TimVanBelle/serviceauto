@@ -1,4 +1,12 @@
-<h2>Resend unlock instructions</h2>
+
+
+<div class="container">
+  <div class="row">
+   <div class="col-xs-12 col-sm-6  col-sm-offset-3 col-md-6 col-md-offset-3">
+
+     <div class="login">
+     <div class="formulaire">
+     <h2>Renvoyer les instructions de déverouillage</h2>
 
 <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
@@ -9,7 +17,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Resend unlock instructions" %>
+    <%= f.submit "Me renvoyer les instructions" %>
   </div>
 <% end %>
 

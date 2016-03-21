@@ -7,7 +7,7 @@ class OrderPolicy < ApplicationPolicy
   end
 
   def show?
-    record.user == user
+    !record.user || record.user == user
   end
 
   def index?
@@ -19,7 +19,7 @@ class OrderPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    user != nil
   end
 
   def destroy?
