@@ -6,7 +6,9 @@
   margin: 0;
   text-align: center;
   color: white;
-  position: relative;
+  position: absolute;
+  width: 100%;
+  top: 60px;
   z-index: 1;
 }
 .alert-info {
