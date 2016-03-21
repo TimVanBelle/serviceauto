@@ -27,6 +27,8 @@ class CarsController < ApplicationController
   def update
     authorize @car
     if @car.update_attributes(create_params)
+      redirect_to account_path
+
     else
       render "/account"
     end

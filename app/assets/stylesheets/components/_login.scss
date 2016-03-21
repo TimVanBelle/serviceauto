@@ -1,6 +1,24 @@
+body.devise_sessions {
+  background: #CDCDCD;
+}
+
+.formulaire {
+  padding: 50px;
+  background-color: #5CA4A9;
+  border: #CCC 1px solid;
+  color: grey;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+
+p {
+  color: white;
+  margin-bottom: 40px;
+}
+
 .login {
  border-radius: 4px;
- color: black;
  height: 48px;
  text-align: justify;
  font-size: 14px;
@@ -15,13 +33,16 @@
     border: 1px solid #CCC;
     height: 48px;
     font-size: 14px;
-    background-color: rgba(255,255,255,0.35);
+    // background-color: rgba(255,255,255,0.35);
     color: grey;
     border-radius: 5px;
+    width: 100%;
  }
 
  h2 {
     color: grey;
+    margin: 20px;
+    font-size: 40px;
  }
  // .checkbox input {
  //  margin: 0;
@@ -32,36 +53,29 @@
  //
 
  .btn {
-  background-color: #5CA4A9;
+  background-color: #EE5F5B ;
   }
 
-}
+// }
 
  input:focus, textarea:focus {
-   background: transparent;
+   // background: transparent;
    border: none;
    border-bottom: solid 1px white;
-   color:white;
+   color:#EE5F5B;
    box-shadow: none;
    outline: non
  }
+
 #log {
- border: 1px solid white;
- color: white;
- border-radius: 20px;
- padding-left:20px;
- padding-right: 20px;
- background-color: #469AE0;
+ // border: 1px solid white;
+ // color: white;
+ border-radius: 5px;
+ // padding-left:20px;
+ // padding-right: 20px;
+background-color: #EE5F5B;
 }
 
-#log:hover {
- background: transparent;
- border: 1px solid #469AE0 ;
- color: #469AE0 ;
- border-radius: 20px;
- padding-left:20px;
- padding-right: 20px;
-}
 
 #password {
  color: rgb(190,190,190);
@@ -70,4 +84,5 @@
 
 .checkbox input[type="checkbox"] {
   height: 10px;
+}
 }
