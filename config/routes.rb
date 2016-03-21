@@ -1,12 +1,7 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  get 'order_items/create'
-
-  get 'order_items/update'
-
-  get 'order_items/destroy'
-
-  get 'carts/show'
+  resources :order_items, only: [:create, :update, :destroy]
+  resource :carts, only: [:show, :update, :edit]
 
   get 'services/index'
 
@@ -14,19 +9,13 @@ Rails.application.routes.draw do
 
   root "pages#show"
 
-
-
-
   resource :account, controller: "account"  do
     resources :profil, only: [:show, :index]
-
     resources :cars, only: [:index, :show]
     resources :orders, only: [:index, :show, :edit, :update, :destroy]
   end
 
-
   resources :services, only: [:index]
-  resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
   resources :cars, only: [:new, :create, :edit, :update, :destroy]
   resources :orders, only: [:new, :create]

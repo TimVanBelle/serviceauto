@@ -6,6 +6,10 @@ class CartsPolicy < ApplicationPolicy
   end
 
   def show?
-    user
+    true
+  end
+
+  def update?
+    true
   end
 end
