@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
   helper_method :current_order
-
+  before_filter :store_current_location, unless: :devise_controller?
   include Pundit
 
   after_action :verify_authorized, except: :index, unless: :devise_controller?
@@ -16,10 +16,14 @@ class ApplicationController < ActionController::Base
   end
 
   def current_order
-    if !session[:order_id].nil?
+    if session[:order_id].present?
       Order.find(session[:order_id])
     else
       Order.new
     end
+  end
+
+  def store_current_location
+    store_location_for(:user, request.url)
   end
 end
