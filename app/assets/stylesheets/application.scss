@@ -1,3 +1,16 @@
+html {
+  height: 100%;
+}
+
+body {
+  padding-top: 53px;
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+}
+
 // Graphical variables
 @import "config/variables";
 @import "config/bootstrap_variables";
@@ -16,6 +29,7 @@
 @import "layout/footer";
 @import "layout/navbar";
 @import "layout/utilities";
+@import "layout/navbar2";
 
 @import "components/index";
 
@@ -23,3 +37,4 @@
 @import "pages/home";
 
 @import "vendor/index";
+
