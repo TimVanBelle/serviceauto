@@ -1,68 +1,72 @@
-/ h6 Profil de : #{@profil.first_name} #{@profil.last_name}
+/ h6 Profil de : #{@profil.first_name} #{@profil.last_name
 
 .col-lg-6.col-xs-6
-  .container
-    .row.card-home
-      h2 Vos Informations :
+    .formulaireprofil
+       .container
+        .row.card-home
 
-      p = @profil.picture
-      p
-      ' Prénom : #{@profil.first_name}
+            h2 Vos Informations :
 
-      p
-      ' Nom : #{@profil.last_name}
+            p = @profil.picture
+            p
+            ' Prénom : #{@profil.first_name}
 
-      p
-      ' E-mail : #{@user.email}
+            p
+            ' Nom : #{@profil.last_name}
 
-      = link_to "Modifier", edit_user_registration_path(@user), class: "btn btn-primary"
+            p
+            ' E-mail : #{@user.email}
 
-    .row.card-home
-      h2 Vos Voitures :
-      - @cars.each do |car|
-        div
-          p
-          ' Marque : #{car.car_maker}
-          p
-          ' Modèle : #{car.model}
-          p
-          ' Couleur : #{car.color}
-          p
-          ' Kilométrage : #{car.mileage}
-          p
-          ' Plaque d'immatriculation : #{car.registration_plate}
-          = link_to "Modifier", edit_car_path(car), class: "btn btn-primary"
-          .row
-          /   .col-lg-3.col-xs-3 style=("\n    text-align: left;\n")
-          p
-          = button_to "Supprimer ma voiture", car_path(car), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger"
-          p
-          = link_to "Ajouter une voiture", new_car_path, class: "btn btn-primary"
+            = link_to "Modifier", edit_user_registration_path(@user), class: "links"
+
+        .row.card-home
+          h2 Vos Voitures :
+          - @cars.each do |car|
+            div
+              p
+              ' Marque : #{car.car_maker}
+              p
+              ' Modèle : #{car.model}
+              p
+              ' Couleur : #{car.color}
+              p
+              ' Kilométrage : #{car.mileage}
+              p
+              ' Plaque d'immatriculation : #{car.registration_plate}
+              = link_to "Modifier", edit_car_path(car), class: "links"
+              .row
+              /   .col-lg-3.col-xs-3 style=("\n    text-align: left;\n")
+              p
+              = link_to "Supprimer ma voiture", car_path(car), data: { confirm: "Are you sure?" }, method: :delete, class: "links"
+              p
+              = link_to "Ajouter une voiture", new_car_path, class: "links"
 
 .col-lg-6.col-xs-6
-  .container
-    .row.card-home
-      h2 Vos Commandes :
 
-      - @orders.each do |order|
-        | Date et lieu de prise en charge :
-        = order.start_date
-        = order.pick_up_place
-        | Date et lieu de retour du véhicule :
-        = order.end_date
-        = order.return_place
-        | Type de service :
-        = order.service_type
+  .formulaireprofil
+    .contenair
+      .row.card-home
+        h2 Vos Commandes :
 
-    .row.card-home
-      h4 Compléter votre commande
-    form action="#{services_path}"
-      .col-xs-4 style=("\n    text-align: left;\n")
-        select.form-control name="prestation"
-          - @categories.each do |category|
-            option
-              = category
-      .col-xs-3 style=("\n    text-align: left;\n")
-        button type="submit" class="btn btn-default" rechercher
+        - @orders.each do |order|
+          | Date et lieu de prise en charge :
+          = order.start_date
+          = order.pick_up_place
+          | Date et lieu de retour du véhicule :
+          = order.end_date
+          = order.return_place
+          | Type de service :
+          = order.service_type
+  / .formulairecommande
+  /       .row.card-home
+  /         h2 Compléter votre commande
+  /       form action="#{services_path}"
+  /         .col-xs-4 style=("\n    text-align: left;\n")
+  /           select.form-control name="prestation"
+  /             - @categories.each do |category|
+  /               option
+  /                 = category
+  /         .col-xs-3 style=("\n    text-align: left;\n")
+  /           button type="submit" class="btn btn-default" rechercher
 
 
