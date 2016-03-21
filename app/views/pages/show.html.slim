@@ -1,5 +1,5 @@
 
-/ == render partial: "shared/banner"
+/ == render partial: "shared/navbar"
 .banner
   .banner-content
     .container
@@ -9,16 +9,10 @@
           h4 réservez les services de notre consierge auto Alfred
           br
           = link_to "Mode d'emploi", "#banner2", class: "btn btn-default"
-
-
-
-
-
       .row.card-home
-
         .col-lg-12.col-xs-12
         form action="#{services_path}"
-          .col-xs-offset-2.col-xs-10
+          .col-xs-offset-3.col-xs-8
             select.form-control name="prestation" id="prestation" onchange="submit()"
               option disabled="" selected="" value=""
                 | - Choisissez ce qu'Alfred peut faire pour vous ;-)!
@@ -29,18 +23,49 @@
 
 
 
+.container_banner2
+
+  br
+  h2 Les différentes prestations possibles
+  br
+  .row
+    .col-xs-4.col-md-4 style=("padding: 0 0 0%")
+      .card_entretien
+        .card-category Entretien
+    .col-xs-4.col-md-4 style=("padding: 0 0 0%")
+      .card_demarches
+        .card-category Démarches carte grise
+    .col-xs-4.col-md-4 style=("padding: 0 0 0%")
+      .card_lavage
+        .card-category Lavage
+  br
+  br
 
 
-        / .row.card-service
-        /   h2.text-center Les services d'Alfred
-        /     .container
-        /      .card style="background: linear-gradient(-225deg), rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('app/assets/images/profil.jpeg');"
-        /     .card-category Entretien
-        /     .card-description
-        /      h2 Paillard's Home
-        /     p Charming room with patio
-        /     img.card-user src="images/Speedy_gonzales.jpg" /
+.banner_commentcamarche
+  .container
+    .row
+      .col-lg-12.col-xs-12 style=("padding: 10px 0 100px 0;")
+        h2 Comment ça marche ?
+    .row
+      .col-xs-4.col-md-4
+        h3 Réserver votre service Alfred & votre prestation en ligne
+      .col-xs-4.col-md-4
+        h3 Alfred vient chercher votre véhicule où vous le souhaitez et gére la prestation chez le professionnel sélectionné
+      .col-xs-4.col-md-4
+        h3 Alfred vous ramène votre véhicule où vous le souhaitez
 
-
-
+.banner_nostarifs
+  .container
+    .row
+      .col-lg-12.col-xs-12 style=("padding: 10px 0 50px 0;")
+        h2  Ce que vous paierez en réservant en ligne  ?
+    .row
+      .col-xs-offset-1.col-xs-4 style=("padding: 100px 0 10px 0;")
+        h3 Les services d'Alfred. Tarification simple et unique: 25€ par course
+      .col-xs-offset-1.col-xs-4 style=("padding: 100px 0 10px 0;")
+        h3 Les prestations des professionnels sélectionnés. Tarifs publics en vigueurs (*)
+    .row
+      .col-lg-12.col-xs-12 style=("padding: 10px 0 10px 0; margin-bottom: -100px;")
+        p * pour les prestations dont les prix sont connus a postériori, comme le plein d'essence. Refacturation à prix coûtant
 

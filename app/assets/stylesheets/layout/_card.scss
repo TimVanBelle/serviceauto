@@ -1,23 +1,41 @@
 
-.card {
-  height: 175px;
+@mixin card {
+  height: 275px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   color: white;
-
   bottom: 10px;
   z-index: 10;
   display: flex;
-  justify-content: space-around;
   align-item: center;
   flex-item: 0 0 20%;
   margin-top: 50px
 }
 
+
+.card_entretien {
+  @include card;
+  background-image: url('http://res.cloudinary.com/dtngvyuf6/image/upload/v1458572737/Entretien_auto_ua3oce.jpg');
+  width: 100%;
+  padding: 0 0 0%;
+}
+
+.card_demarches {
+  @include card;
+  background-image: url('http://res.cloudinary.com/dtngvyuf6/image/upload/v1458573227/carte-grise_xgagdt.jpg');
+  width: 100%;
+  padding: 0 0 0%;
+}
+
+.card_lavage {
+  @include card;
+  background-image: url('http://res.cloudinary.com/dtngvyuf6/image/upload/v1458557953/lavage_auto_zqtlzr.jpg');
+  padding: 0 0 0%;
+}
+
 .card-home {
   margin-top: 50px;
 }
-
 
 .card-user {
   position: absolute;
@@ -28,8 +46,9 @@
   position: absolute;
   top: 10px;
   left: 10px;
-  font-size: 10px;
+  font-size: 20px;
   text-transform: uppercase;
+  text-shadow: 0 1px 3px rgb(51, 51, 51);
 }
 .card-description {
   position: absolute;

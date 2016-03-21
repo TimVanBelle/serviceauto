@@ -2,6 +2,17 @@
  * Your CSS code for flash notices and alerts
 * ------------------------------------- */
 
+
+.alert {
+  margin: 0;
+  text-align: center;
+  color: white;
+  position: absolute;
+  width: 100%;
+  top: 60px;
+  z-index: 1;
+}
+
 // .alert {
 //   margin: 0;
 //   text-align: center;
@@ -9,6 +20,7 @@
 //   position: relative;
 //   z-index: 1;
 // }
+
 .alert-info {
   background: $blue;
 }
