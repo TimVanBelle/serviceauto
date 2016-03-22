@@ -1,5 +1,8 @@
-<% if @order.errors.any? || @order_item.errors.any? %>
-alert("not valid.")
+$('.alert').hide();
+<% if @order.errors.any? || (@order_item.present? && @order_item.errors.any?) %>
+  alert("not valid.")
+<% elsif @alert.present? %>
+  $('nav').after('<div class="alert alert-warning alert-dismissible" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>' + '<%= @alert %>' + '</div>');
 <% else %>
   $(".cart-text").html("<%= escape_javascript(render 'layouts/cart_text') %>")
 <% end %>
