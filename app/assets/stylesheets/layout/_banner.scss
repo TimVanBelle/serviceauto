@@ -13,10 +13,10 @@
   background-color: rgba(200,200,200,0.3);
   // line-height: 1.1;
   text-rendering: optimizelegibility;
-  position: absolute;
+  position: relative;
   width: 100%;
   top: 0;
-  z-index: -1;
+  z-index: 0;
 }
 .banner h1 {
   font-size: 50px;
@@ -35,10 +35,105 @@
 }
 
 #prestation {
-    width: 80%;
-    margin-top: 120px;
-    posiition: absolute;
-    height: 55px;
+  width: 80%;
+}
+
+.banner2 {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-blend-mode: lighten;
+  background-size: cover;
+  display: flex;
+  color: white;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  // line-height: 1.1;
+  text-rendering: optimizelegibility;
+  position: relative;
+  width: 100%;
+  top: 0;
+  z-index: -1;
+}
+
+
+
+.container_banner2{
+    width: 100%;
+    text-align: center;
+    color: #5CA4A9;
+    background-color: #f0f0f5;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.banner_commentcamarche{
+  background-image: url('http://res.cloudinary.com/dtngvyuf6/image/upload/v1458637922/Alfred1_qy2hwe.png');
+  // background-image: -webkit-linear-gradient(315deg, rgba(0, 114, 168, 0.31) 0%, rgba(4, 43, 70, 0.6) 50%);
+  height: 100vh;
+  opacity: 0.7;
+  background-repeat: no-repeat;
+  background-blend-mode: lighten;
+  background-size: cover;
+  display: flex;
+  color: white;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  // line-height: 1.1;
+  text-rendering: optimizelegibility;
+  position: relative;
+  width: 100%;
+  top: 0;
+  z-index: -1;
+}
+
+.banner_commentcamarche h2 {
+  text-shadow: 0 1px 3px rgb(51, 51, 51);
+}
+
+.banner_commentcamarche h3 {
+  text-shadow: 0 1px 3px rgb(51, 51, 51);
+}
+
+.banner_nostarifs{
+  background-image: url('http://res.cloudinary.com/dtngvyuf6/image/upload/v1458568417/Alfred/Alfred3_cle%CC%81.png');
+  height: 100vh;
+  opacity: 0.7;
+  background-repeat: no-repeat;
+  background-blend-mode: lighten;
+  background-size: cover;
+  display: flex;
+  color: white;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  // line-height: 1.1;
+  text-rendering: optimizelegibility;
+  position: relative;
+  width: 100%;
+  top: 0;
+  z-index: -1;
+}
+
+.banner_nostarifs h2 {
+  text-shadow: 0 1px 3px rgb(51, 51, 51);
+}
+
+.banner_nostarifs h3 {
+  text-shadow: 0 1px 3px rgb(51, 51, 51);
+  color: white;
+}
+
+.banner_nostarifs p {
+  text-shadow: 0 1px 3px rgb(51, 51, 51);
+  margin-top: 120px;
+  position: absolute;
+  height: 55px;
 }
 
 .btn-default {
