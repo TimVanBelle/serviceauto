@@ -9,7 +9,9 @@
           <span class="[ icon-bar ]"></span>
         </button>
         <div class="[ animbrand ]">
-          <a class="[ navbar-brand ][ animate ]" href="#">Alfred</a>
+        <%=link_to "Alfred", root_path, class: "[ navbar-brand ][ animate ]"%>
+
+        <!--   <a class="[ navbar-brand ][ animate ]" href="#">Alfred</a> -->
         </div>
       </div>
 
@@ -40,7 +42,7 @@
            <%end%>
           </li>
           </ul>
-          <li> <%= link_to  "#{  current_order.order_items.size} #{number_to_currency current_order.subtotal}", account_path, class: "[ pull-right glyphicon glyphicon-shopping-cart ]"%></li>
+          <li> <%= link_to  "#{  current_order.order_items.size} #{number_to_currency current_order.subtotal}", carts_path, class: "[ pull-right glyphicon glyphicon-shopping-cart ]"%></li>
           </li>
         </form>
       </div>
