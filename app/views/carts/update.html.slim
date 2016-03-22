@@ -33,7 +33,11 @@
             fieldset
               legend Votre voiture
               .col-xs-12
+<<<<<<< HEAD
                 = f.input :car, label: false, collection: current_user.cars.map {|v,k| ["#{v.car_maker} - #{v.model} - #{v.color} ", v.id]}, selected: current_user.cars.first.id
+=======
+                = f.input :car_id, label: " ", collection: current_user.cars.map {|v,k| ["#{v.car_maker} - #{v.model} - #{v.color} ", v.id]}, selected: current_user.cars.first.id
+>>>>>>> fe3b9331311b2c1a93dfdd109e5ca86ad8552d8c
 
             fieldset
               legend Date et lieu de prise en charge :

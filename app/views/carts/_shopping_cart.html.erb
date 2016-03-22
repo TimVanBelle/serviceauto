@@ -11,6 +11,7 @@
   <p class="text-center">
     Il n'y a pas de produits dans votre panier.   <%= link_to "retour", root_path %> et ajoutez des produits dans votre panier.
   </p>
+
 <% else %>
   <% @order_items.each do |order_item| %>
     <%= render 'carts/cart_row', service: order_item.service, order_item: order_item, show_total: true %>

@@ -26,7 +26,7 @@ class OrdersController < ApplicationController
     find_order
     start_time = params[:order][:start_date].to_datetime
     end_date = params[:order][:end_date].to_datetime
-    subtotal = current_order.subtotal + 25.0
+    subtotal = current_order.total
     authorize @order
     if @order.update_attributes(create_params)
       redirect_to account_orders_path @order
