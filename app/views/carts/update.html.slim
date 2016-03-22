@@ -2,17 +2,15 @@ div class="container"
 
   h1 Votre commande
 
-  h2 Résumer de votre commande :
+  h2 Résumé de votre commande :
   - current_order.order_items.each do |item|
     div
       = item.service.title
-      = item.service.content
       = item.service.price
 
   div
     p
-    ' Déplacement
-    ' Frais de déplacement
+    ' Les frais d'intervention d'Alfred
     ' 25.0
   p
   ' Total :
@@ -22,7 +20,7 @@ div class="container"
   = simple_form_for current_order do |f|
 
 
-    h2 Voiture sélectionner :
+    h2 Voiture sélectionnée :
     = f.input :car, collection: current_user.cars.map {|v,k| ["#{v.car_maker} - #{v.model} - #{v.color} ", v.id]}, selected: current_user.cars.first.id
 
 

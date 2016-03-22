@@ -37,7 +37,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
-    autoprefixer-rails (6.3.3.1)
+    autoprefixer-rails (6.3.4)
       execjs
     aws_cf_signer (0.1.3)
     bcrypt (3.1.11)
@@ -46,7 +46,7 @@ GEM
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
-    bootstrap3-datetimepicker-rails (4.17.37)
+    bootstrap3-datetimepicker-rails (4.14.30)
       momentjs-rails (>= 2.8.1)
     builder (3.2.2)
     byebug (8.2.2)
@@ -55,7 +55,7 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
-    cloudinary (1.1.2)
+    cloudinary (1.1.3)
       aws_cf_signer
       rest-client
     coffee-rails (4.1.1)
@@ -74,7 +74,7 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
-    domain_name (0.5.20160216)
+    domain_name (0.5.20160310)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.6.0)
@@ -120,7 +120,7 @@ GEM
       mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
     pg (0.18.4)
-    puma (3.1.0)
+    puma (3.2.0)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
     rack (1.6.4)
@@ -176,7 +176,7 @@ GEM
     rdoc (4.2.2)
       json (~> 1.4)
     remotipart (1.2.1)
-    responders (2.1.1)
+    responders (2.1.2)
       railties (>= 4.2.0, < 5.1)
     rest-client (1.8.0)
       http-cookie (>= 1.0.2, < 2.0)
@@ -241,7 +241,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootstrap-sass (~> 3.3.1)
-  bootstrap3-datetimepicker-rails
+  bootstrap3-datetimepicker-rails (~> 4.14.30)
   byebug
   carrierwave
   cloudinary
@@ -251,7 +251,7 @@ DEPENDENCIES
   font-awesome-sass (~> 4.2.0)
   jbuilder (~> 2.0)
   jquery-rails
-  momentjs-rails
+  momentjs-rails (>= 2.9.0)
   pg
   puma
   pundit
