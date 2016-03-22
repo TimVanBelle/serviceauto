@@ -15,17 +15,17 @@
               .col-xs-4
                 p = "#{item.service.price} euros"
 
-            div
-              .col-xs-8
-                p Les frais d'intervention d'Alfred
-              .col-xs-4
-                p 25 euros
-            div
-              .col-xs-8
-               p Total
-               - price = current_order.subtotal + 25.0
-              .col-xs-4
-               p = "#{price} euros"
+          div
+            .col-xs-8
+              p Les frais d'intervention d'Alfred
+            .col-xs-4
+              p 25 euros
+          div
+            .col-xs-8
+             p Total
+             - price = current_order.subtotal + 25.0
+            .col-xs-4
+             p = "#{price} euros"
 
       .row
         .col-xs-12
@@ -33,7 +33,7 @@
             fieldset
               legend Votre voiture
               .col-xs-12
-                = f.input :car, label: " ", collection: current_user.cars.map {|v,k| ["#{v.car_maker} - #{v.model} - #{v.color} ", v.id]}, selected: current_user.cars.first.id
+                = f.input :car_id, label: " ", collection: current_user.cars.map {|v,k| ["#{v.car_maker} - #{v.model} - #{v.color} ", v.id]}, selected: current_user.cars.first.id
 
             fieldset
               legend Date et lieu de prise en charge :

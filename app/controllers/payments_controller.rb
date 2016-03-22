@@ -5,7 +5,7 @@ class PaymentsController < ApplicationController
   end
 
   def create
-    @amount = total
+    @amount = current_order.total
 
   customer = Stripe::Customer.create(
     source: params[:stripeToken],
@@ -16,12 +16,12 @@ class PaymentsController < ApplicationController
   charge = Stripe::Charge.create(
     customer: customer.id,
     amount:       (@amount * 100).to_i,  # in cents
-    description:  "Payment for teddy #{@order.teddy_sku} for order #{@order.id}",
+    description:  "Payment for réservation #{current_order.id} for order #{@order.id}",
     currency:     'eur'
   )
 
-  @order.update(payment: charge.to_json, state: 'paid')
-
+  @order.update(state: 'paid')
+  authorize @order
   redirect_to order_path(@order)
 
 rescue Stripe::CardError => e
@@ -32,6 +32,6 @@ rescue Stripe::CardError => e
 private
 
   def set_order
-    @order = Order.where(state: 'pending').find(params[:order_id])
+    @order = Order.find(params[:order_id])
   end
 end
