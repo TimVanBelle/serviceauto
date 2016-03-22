@@ -8,7 +8,7 @@
 
 .navbar-bootsnipp {
   background-color: rgb(255, 255, 255);
-  border-color: rgb(95, 176, 228);
+  border-color:  #E6E6E6;
   border-radius: 0px;
   margin-bottom: 0px;
   z-index: 100;
@@ -28,20 +28,21 @@
   width: 100%;
 }
 .navbar-bootsnipp .navbar-toggle .icon-bar {
-  background-color: rgb(95, 176, 228);
+  background-color:  #E5CA4A9;
 }
 
 .navbar-bootsnipp .navbar-brand {
-  color: rgb(95, 176, 228);
+  color: #E5CA4A9;
   font-weight: 900;
   letter-spacing: 2px;
 }
 
 .navbar-bootsnipp .navbar-nav > li > a {
-  border: 0px solid rgb(95, 176, 228);
-  color: rgb(120, 120, 120);
+  border: 0px solid #E5CA4A9;
+  color: #5CA4A9;
   padding: 15px 14px;
 }
+
 
 .navbar-bootsnipp .navbar-nav > li > form > .input-group > input,
 .navbar-bootsnipp .navbar-nav > li > form > .input-group > .input-group-btn > .btn {
@@ -53,11 +54,11 @@
 .navbar-bootsnipp .navbar-nav > li:not(.disabled) > a:hover,
 .navbar-bootsnipp .navbar-nav > li:not(.disabled) > a:focus {
   border-left-width: 5px;
-  color: rgb(95, 176, 228);
+  color: #E5CA4A9;
   padding-left: 10px;
 }
 .navbar-bootsnipp .navbar-nav > li.disabled > a {
-  color: rgb(200, 200, 200);
+  color: #E5CA4A9;
 }
 
 .navbar-bootsnipp .navbar-nav > li > .dropdown-menu {
@@ -72,8 +73,8 @@
   right: auto;
 }
 .navbar-bootsnipp .navbar-nav > li > .dropdown-menu > li > a {
-  border-left: 0px solid rgb(95, 176, 228);
-  color: rgb(120, 120, 120);
+  border-left: 0px solid #E5CA4A9;
+  color: #E5CA4A9;
   font-size: 16px;
   font-weight: 400;
   padding: 10px 20px;
@@ -82,7 +83,7 @@
 .navbar-bootsnipp .navbar-nav > li > .dropdown-menu > li.active > a,
 .navbar-bootsnipp .navbar-nav > li > .dropdown-menu > li > a:hover,
 .navbar-bootsnipp .navbar-nav > li > .dropdown-menu > li > a:focus {
-  background-color: rgb(245, 245, 245);
+  background-color: #E5CA4A9;
   border-left-width: 5px;
   padding-left: 15px;
 }
@@ -105,41 +106,42 @@
   width: 100%;
 }
 
-.navbar-bootsnipp .bootsnipp-search {
-  display: none;
-}
-.navbar-bootsnipp .bootsnipp-search .form-control {
-  background-color: rgb(235, 235, 235);
-  border-radius: 0px;
-  border-width: 0px;
-  font-size: 24px;
-  padding: 30px 0px;
-}
-.navbar-bootsnipp .bootsnipp-search .form-control {
-  background-color: rgb(235, 235, 235);
-  border-radius: 0px;
-  border-width: 0px;
-  font-size: 24px;
-  padding: 25px 0px;
-}
-.navbar-bootsnipp .bootsnipp-search .form-control:focus {
-  border-color: transparent;
-  outline: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-.navbar-bootsnipp .bootsnipp-search .input-group-btn > .btn {
-  padding: 14px 16px;
-  border-radius: 0px;
-}
-.navbar-bootsnipp .bootsnipp-search .input-group-btn > .btn.active,
-.navbar-bootsnipp .bootsnipp-search .input-group-btn > .btn:hover,
-.navbar-bootsnipp .bootsnipp-search .input-group-btn > .btn:focus {
-  padding: 14px 16px 14px 15px;
-}
-.navbar-bootsnipp .bootsnipp-search .input-group-btn > .btn-default {
-  background-color: rgb(245, 245, 245);
-}
+
+// .navbar-bootsnipp .bootsnipp-search {
+//   display: none;
+// }
+// .navbar-bootsnipp .bootsnipp-search .form-control {
+//   background-color: #E5CA4A9;
+//   border-radius: 0px;
+//   border-width: 0px;
+//   font-size: 24px;
+//   padding: 30px 0px;
+// }
+// .navbar-bootsnipp .bootsnipp-search .form-control {
+//   background-color: #E5CA4A9;
+//   border-radius: 0px;
+//   border-width: 0px;
+//   font-size: 24px;
+//   padding: 25px 0px;
+// }
+// .navbar-bootsnipp .bootsnipp-search .form-control:focus {
+//   border-color: transparent;
+//   outline: 0;
+//   -webkit-box-shadow: none;
+//   box-shadow: none;
+// }
+// .navbar-bootsnipp .bootsnipp-search .input-group-btn > .btn {
+//   padding: 14px 16px;
+//   border-radius: 0px;
+// }
+// .navbar-bootsnipp .bootsnipp-search .input-group-btn > .btn.active,
+// .navbar-bootsnipp .bootsnipp-search .input-group-btn > .btn:hover,
+// .navbar-bootsnipp .bootsnipp-search .input-group-btn > .btn:focus {
+//   padding: 14px 16px 14px 15px;
+// }
+// .navbar-bootsnipp .bootsnipp-search .input-group-btn > .btn-default {
+//   background-color: #E5CA4A9;
+// }
 .nav-padding {
   padding-top: 61px;
 }
@@ -171,7 +173,7 @@
 
 
   .navbar-bootsnipp .bootsnipp-search {
-    background-color: rgb(235, 235, 235);
+    background-color: #E5CA4A9;
     display: block;
     position: absolute;
     top: 100%;
