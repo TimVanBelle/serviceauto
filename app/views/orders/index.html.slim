@@ -1,1 +1,40 @@
--fail
+h1 Veuillez régler votre commande :
+
+h2 Résumer :
+p
+' Votre véhicule :
+' #{current_order.car.car_maker} - #{current_order.car.model} - #{current_order.car.color}
+
+p
+' Vos prestations :
+- current_order.order_items.each do |item|
+  div
+    ' -
+    = item.service.title
+    = item.service.price
+
+div
+p
+' Les frais d'intervention d'Alfred
+' 25.0
+p
+' Totale :
+= current_order.subtotal + 25.0
+' €
+
+p
+' Nous prennons en charge votre véhicule le : #{current_order.start_date} à l'addresse : #{current_order.pick_up_place}
+
+p
+' Nous vous retournons votre véhicule le : #{current_order.end_date} à l'addresse : #{current_order.return_place}
+
+h1 Purchase of groom
+
+= current_order.id
+= form_tag account_order_payments_path(current_order) do
+  article
+    label.amount
+      span Amount: = current_order.subtotal
+
+      script.stripe-button data-amount="#{current_order.subtotal * 100}" data-currency="EUR" data-description="Groom commande #{current_order.id}" data-key="#{Rails.configuration.stripe[:publishable_key]}" data-name="Ma réservation de groom" src="https://checkout.stripe.com/checkout.js"
+

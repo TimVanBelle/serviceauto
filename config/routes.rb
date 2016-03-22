@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'payments/new'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :order_items, only: [:create, :update, :destroy]
   resource :carts, only: [:show, :update, :edit]
@@ -12,7 +14,9 @@ Rails.application.routes.draw do
   resource :account, controller: "account"  do
     resources :profil, only: [:show, :index]
     resources :cars, only: [:index, :show]
-    resources :orders, only: [:index, :show, :edit, :update, :destroy]
+    resources :orders, only: [:index, :show, :edit, :update, :destroy] do
+      resources :payments, only: [:new, :create]
+    end
   end
 
   resources :services, only: [:index]
