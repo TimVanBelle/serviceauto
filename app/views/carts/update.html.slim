@@ -1,67 +1,84 @@
-div class="container"
 
-  h1 Votre commande
+  div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3"
+    .formulaireprofil
 
-  h2 Résumé de votre commande :
-  - current_order.order_items.each do |item|
-    div
-      = item.service.title
-      = item.service.price
+      .row
+        .col-xs-12
+          h2 Votre commande
 
-  div
-    p
-    ' Les frais d'intervention d'Alfred
-    ' 25.0
-  p
-  ' Total :
-  - price = current_order.subtotal + 25.0
-  = price
+          / h2 Résumé de votre commande :
+          - current_order.order_items.each do |item|
+            div
 
-  = simple_form_for current_order do |f|
+              .col-xs-8
+                p = item.service.title
+              .col-xs-4
+                p = "#{item.service.price} euros"
 
+            div
+              .col-xs-8
+                p Les frais d'intervention d'Alfred
+              .col-xs-4
+                p 25 euros
+            div
+              .col-xs-8
+               p Total
+               - price = current_order.subtotal + 25.0
+              .col-xs-4
+               p = "#{price} euros"
 
-    h2 Voiture sélectionnée :
-    = f.input :car, collection: current_user.cars.map {|v,k| ["#{v.car_maker} - #{v.model} - #{v.color} ", v.id]}, selected: current_user.cars.first.id
+      .row
+        .col-xs-12
+          = simple_form_for current_order do |f|
+            fieldset
+              legend Votre voiture
+              .col-xs-12
+                = f.input :car, label: " ", collection: current_user.cars.map {|v,k| ["#{v.car_maker} - #{v.model} - #{v.color} ", v.id]}, selected: current_user.cars.first.id
 
-
-
-    h2 Date et lieu de prise en charge :
-    .form-gro
-    .input-group.date id='datetimepicker6'
-      input class="form-control" name="order[start_date]"
-      span class="input-group-addon"
-        span class="glyphicon glyphicon-calendar"
-    = f.input :pick_up_place, as: :uuid, label:"Lieu de prise en charge", name:"address"
-
-
-    h2 Date et lieu de retour :
-    .form-gro
-    .input-group.date id='datetimepicker7'
-      input class="form-control" name="order[end_date]"
-      span class="input-group-addon"
-        span class="glyphicon glyphicon-calendar"
-    = f.input :return_place, as: :uuid, label:"Lieu de retour", name:"address"
-
-
-    h2 Commentaire :
-    .form-gro
-      = f.input :comment, as: :text, row:"4"
+            fieldset
+              legend Date et lieu de prise en charge :
+              .col-xs-12
+                .form-group
+                  .input-group.date id='datetimepicker6'
+                    input class="form-control" name="order[start_date]"
+                    span class="input-group-addon"
+                      span class="glyphicon glyphicon-calendar"
+                  = f.input :pick_up_place, as: :uuid, placeholder:"Lieu de prise en charge", name:"address"
 
 
-    = f.submit 'Valider', class: 'btn btn-default'
+            fieldset
+              legend Date et lieu de retour :
+              .form-group
+                .col-xs-12
+                  .input-group.date id='datetimepicker7'
+                    input class="form-control" name="order[end_date]"
+                    span class="input-group-addon"
+                      span class="glyphicon glyphicon-calendar"
+                  = f.input :return_place, as: :uuid, placeholder:"Lieu de retour", name:"address"
+
+            fieldset
+              legend Commentaire :
+
+              .form-group
+              .col-xs-12
+                = f.input :comment, as: :text, row:"4"
+
+              div
+              .col-xs-12
+                = f.submit 'Valider', class: 'btn btn-default col-xs-12 text-center', id:"log"
 
 
 
-  - content_for :javascripts
-    javascript:
-      $(function () {
-          $('#datetimepicker6').datetimepicker().data("DateTimePicker").minDate(new Date());
-          $('#datetimepicker7').datetimepicker({
-            useCurrent: false //Important! See issue #1075
-          });
+          - content_for :javascripts
+            javascript:
+              $(function () {
+                  $('#datetimepicker6').datetimepicker().data("DateTimePicker").minDate(new Date());
+                  $('#datetimepicker7').datetimepicker({
+                    useCurrent: false //Important! See issue #1075
+                  });
 
-          $("#datetimepicker6").on("dp.change", function (e) {
-            $('#datetimepicker7').data("DateTimePicker").minDate(e.date.add(4, 'hours'));
-          });
-      });
+                  $("#datetimepicker6").on("dp.change", function (e) {
+                    $('#datetimepicker7').data("DateTimePicker").minDate(e.date.add(4, 'hours'));
+                  });
+              });
 

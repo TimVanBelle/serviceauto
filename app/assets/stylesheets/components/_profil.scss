@@ -3,23 +3,50 @@
   padding-top: 5px;
   background-color: #5CA4A9;
   border: #CCC 1px solid;
-  color: white;
+  color: grey;
   margin-top: 60px;
   width: 100%;
   border-radius: 5px;
-  line-height: 1px;
+  margin-bottom: 30px;
 
-h2 {
-  color: grey;
-  // text-align: center;
-  text-decoration: underline;
-  font-size: 25px;
+  h2 {
+    color: white;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 25px;
+    padding-bottom: 40px;
+  }
+
+  legend {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+  }
+
+  p {
+    font-size: 16px;
+    color: white;
+  }
+
+  input {
+    border-radius: 5px;
+  }
+
+  btn-default {
+    background-color: grey;
+  }
+
+  .input-group-addon {
+    border-radius: 0 5px 5px 0;
+  }
+  .order_comment{
+    border-radius: 5px;
+  }
+
 }
 
-p {
-  font-size: 8px;
-}
-
+#carform {
+  width: 100%;
 }
 
 
