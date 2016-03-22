@@ -1,34 +1,30 @@
 div class="container"
 
-  h1 Votre commande
+  h1 Résumer de votre commande
 
-  h2 Résumé de votre commande :
+  h2 Vos services :
   - current_order.order_items.each do |item|
     div
       = item.service.title
+      = item.service.content
       = item.service.price
 
   div
     p
-    ' Les frais d'intervention d'Alfred
+    ' Déplacement
+    ' Frais de déplacement
     ' 25.0
   p
   ' Total :
-  - price = current_order.subtotal + 25.0
-  = price
+  = current_order.subtotal + 25.0
 
-  = simple_form_for current_order do |f|
-
-
-    h2 Voiture sélectionnée :
-    = f.input :car, collection: current_user.cars.map {|v,k| ["#{v.car_maker} - #{v.model} - #{v.color} ", v.id]}, selected: current_user.cars.first.id
-
+  h2 Voiture sélectionner :
 
 
     h2 Date et lieu de prise en charge :
     .form-gro
     .input-group.date id='datetimepicker6'
-      input class="form-control" name="order[start_date]"
+      input class="form-control" name="start_date"
       span class="input-group-addon"
         span class="glyphicon glyphicon-calendar"
     = f.input :pick_up_place, as: :uuid, label:"Lieu de prise en charge", name:"address"
@@ -37,10 +33,10 @@ div class="container"
     h2 Date et lieu de retour :
     .form-gro
     .input-group.date id='datetimepicker7'
-      input class="form-control" name="order[end_date]"
+      input class="form-control" name="end_date"
       span class="input-group-addon"
         span class="glyphicon glyphicon-calendar"
-    = f.input :return_place, as: :uuid, label:"Lieu de retour", name:"address"
+    = f.input :pick_up_place, as: :uuid, label:"Lieu de retour", name:"address"
 
 
     h2 Commentaire :
