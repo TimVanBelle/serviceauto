@@ -26,7 +26,7 @@ class OrdersController < ApplicationController
     find_order
     start_time = params[:order][:start_date].to_datetime
     end_date = params[:order][:end_date].to_datetime
-    price = params[:price]
+    subtotal = current_order.subtotal + 25.0
     authorize @order
     if @order.update_attributes(create_params)
       redirect_to account_orders_path @order
@@ -49,6 +49,6 @@ class OrdersController < ApplicationController
   end
 
   def create_params
-    params.require(:order).permit(:start_date, :end_date, :pick_up_place, :return_place, :comment, :car_id)
+    params.require(:order).permit(:start_date, :end_date, :pick_up_place, :return_place, :comment, :car_id, :subtotal)
   end
 end

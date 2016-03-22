@@ -17,6 +17,9 @@ class Order < ActiveRecord::Base
     order_items.collect { |oi| oi.valid? ? (oi.quantity * oi.unit_price) : 0 }.sum
   end
 
+  def total
+    subtotal + 25
+  end
 
 
 private
