@@ -1,1 +1,27 @@
--fail
+h1 Veuillez régler votre commande :
+
+h2 Résumer :
+p
+' Votre véhicule :
+
+
+p
+' Vos prestations :
+- current_order.order_items.each do |item|
+  div
+    ' -
+    = item.service.title
+    = item.service.content
+    = item.service.price
+p
+' Totale :
+= current_order.subtotal
+' €
+
+p
+' Nous prenons en charge votre véhicule à l'addresse : #{current_order.pick_up_place} le : #{current_order.start_date}
+
+
+
+
+
