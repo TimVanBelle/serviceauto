@@ -3,6 +3,44 @@
   padding-top: 5px;
   background-color: #5CA4A9;
   border: #CCC 1px solid;
+  color: white;
+  // margin-top: 40px;
+  width: 100%;
+  border-radius: 5px;
+  // margin-bottom: 30px;
+
+  h2 {
+    color: grey;
+    // text-align: center;
+    text-decoration: underline;
+    font-size: 25px;
+    // padding-bottom: 60px;
+    padding-top: 10px;
+  }
+
+  p {
+    font-size: 14px;
+    color: white;
+    margin: 0.5em 0;
+  }
+
+  input {
+    border-radius: 5px;
+  }
+
+  btn-default {
+    background-color: grey;
+  }
+}
+
+
+
+
+.formulairerecapcde {
+  padding: 50px;
+  padding-top: 5px;
+  background-color: #5CA4A9;
+  border: #CCC 1px solid;
   color: grey;
   margin-top: 60px;
   width: 100%;
@@ -14,7 +52,8 @@
     text-align: center;
     text-decoration: underline;
     font-size: 25px;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
+    padding-top: 40px;
   }
 
   legend {
@@ -48,6 +87,8 @@
 #carform {
   width: 100%;
 }
+
+
 
 
 .formulairecommande {

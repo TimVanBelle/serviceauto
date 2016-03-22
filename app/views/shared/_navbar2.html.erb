@@ -37,11 +37,11 @@
                 <li> <%= link_to "Mon Compte", account_path%></li>
                 <li><a href="#" class="[ animate ]">Mes réservations </a></li>
                 <li><%= link_to t('.sign_out', default: 'Se déconnecter'), destroy_user_session_path, method: :delete %></li>
+                </ul>
           <% else %>
             <li><%= link_to t(".sign_in", default: "Connexion"), new_user_session_path%></li>
            <%end%>
           </li>
-          </ul>
           <li> <%= link_to  "#{  current_order.order_items.size} #{number_to_currency current_order.subtotal}", carts_path, class: "[ pull-right glyphicon glyphicon-shopping-cart ]"%></li>
           </li>
         </form>
