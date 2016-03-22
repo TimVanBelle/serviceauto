@@ -40,8 +40,8 @@ gem 'autoprefixer-rails'
 
 gem "pundit"
 gem "rails_admin"
-gem 'momentjs-rails'
-gem 'bootstrap3-datetimepicker-rails'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
 #gem "rails_admin_pundit", :github => "sudosu/rails_admin_pundit"
 
 
