@@ -23,9 +23,7 @@ div class="container"
 
 
     h2 Voiture sélectionner :
-    = f.input :car, collection: current_user.cars.map {|v,k| ["#{v.car_maker} - #{v.model} - #{v.color} ", v.id]}, selected: current_user.cars.first.id
-
-
+    = f.input :car_id, collection: current_user.cars.map {|v,k| ["#{v.car_maker} - #{v.model} - #{v.color} ", v.id]}, selected: current_user.cars.first.id
 
     h2 Date et lieu de prise en charge :
     .form-gro
