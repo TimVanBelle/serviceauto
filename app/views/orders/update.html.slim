@@ -2,6 +2,7 @@ div class="container"
 
   h1 Résumer de votre commande
 
+
   h2 Vos services :
   - current_order.order_items.each do |item|
     div
@@ -14,6 +15,7 @@ div class="container"
     ' Déplacement
     ' Frais de déplacement
     ' 25.0
+
   p
   ' Total :
   = current_order.subtotal + 25.0

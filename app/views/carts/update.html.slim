@@ -14,8 +14,8 @@ div class="container"
     ' 25.0
   p
   ' Total :
-  - price = current_order.subtotal + 25.0
-  = price
+  - subtotal = current_order.subtotal + 25.0
+  = subtotal
 
   = simple_form_for current_order do |f|
 
