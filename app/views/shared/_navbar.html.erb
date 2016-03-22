@@ -114,7 +114,7 @@
 
   <% end %>
   <li class="fa fa-shopping-basket" id="basket"</li>
-  <%= link_to "#{current_order.order_items.size} ( #{number_to_currency current_order.subtotal} )", carts_show_path, class: "btn btn-link cart-text" %>
+  <%= link_to "#{current_order.order_items.size} ( #{number_to_currency current_order.subtotal} )", carts_path, class: "btn btn-link cart-text" %>
 
 
 

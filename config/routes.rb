@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :services, only: [:index]
   resources :order_items, only: [:create, :update, :destroy]
   resources :cars, only: [:new, :create, :edit, :update, :destroy]
-  resources :orders, only: [:new, :create]
+  resources :orders, only: [:new, :create, :update]
   resources :profil, only: [:create, :new, :update, :destroy]
 
 end
