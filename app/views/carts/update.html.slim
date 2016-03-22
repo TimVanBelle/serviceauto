@@ -2,17 +2,15 @@ div class="container"
 
   h1 Votre commande
 
-  h2 Résumer de votre commande :
+  h2 Résumé de votre commande :
   - current_order.order_items.each do |item|
     div
       = item.service.title
-      = item.service.content
       = item.service.price
 
   div
     p
-    ' Déplacement
-    ' Frais de déplacement
+    ' Les frais d'intervention d'Alfred
     ' 25.0
   p
   ' Total :
