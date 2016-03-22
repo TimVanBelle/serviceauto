@@ -19,7 +19,7 @@ p
 ' 25.0
 p
 ' Totale :
-= current_order.subtotal + 25.0
+= current_order.total
 ' €
 
 p
@@ -36,5 +36,5 @@ h1 Purchase of groom
     label.amount
       span Amount: = current_order.subtotal
 
-      script.stripe-button data-amount="#{current_order.subtotal * 100}" data-currency="EUR" data-description="Groom commande #{current_order.id}" data-key="#{Rails.configuration.stripe[:publishable_key]}" data-name="Ma réservation de groom" src="https://checkout.stripe.com/checkout.js"
+      script.stripe-button data-amount="#{current_order.total * 100}" data-currency="EUR" data-description="Groom commande #{current_order.id}" data-key="#{Rails.configuration.stripe[:publishable_key]}" data-name="Ma réservation de groom" src="https://checkout.stripe.com/checkout.js"
 
