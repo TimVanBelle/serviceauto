@@ -32,6 +32,15 @@ class GroomController < ApplicationController
     end
   end
 
+  def index
+    @grooms = Groom.all
+
+    @markers = Gmaps4rails.build_markers(@grooms) do |groom, marker|
+      marker.lat groom.latitude
+      marker.lng groom.longitude
+    end
+  end
+
   private
 
   def groom_params

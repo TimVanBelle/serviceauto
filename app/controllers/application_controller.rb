@@ -17,7 +17,11 @@ class ApplicationController < ActionController::Base
 
   def current_order
     if session[:order_id].present?
-      Order.find(session[:order_id])
+      if Order.where(id: session[:order_id]).length > 0
+        return Order.where(id: session[:order_id]).first
+      else
+        return Order.new
+      end
     else
       Order.new
     end

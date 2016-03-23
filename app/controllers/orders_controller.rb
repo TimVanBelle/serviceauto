@@ -23,6 +23,7 @@ class OrdersController < ApplicationController
   end
 
   def update
+    raise
     find_order
     start_time = params[:order][:start_date].to_datetime
     end_date = params[:order][:end_date].to_datetime
