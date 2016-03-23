@@ -38,16 +38,38 @@
     .contenair
       .row.card-home
         h2 Vos Reservations :
+        - @orders.take(3).each do |order|
+          br
+          div
+            p
+            strong Voiture :
+            - car = Car.find(order.car_id)
+            ' #{car.car_maker} - #{car.model} - #{car.color}
 
-        - @orders.each do |order|
-          p Type de service :
-          = order.service_type
-          p Date et lieu de prise en charge :
-          = order.start_date
-          = order.pick_up_place
-          p Date et lieu de retour du véhicule :
-          = order.end_date
-          = order.return_place
+            p
+            strong Type de service :
+            - order.order_items.each do |order_items|
+              - service = order_items.service_id
+              p
+              '-
+              = Service.find(service).title
+
+            p
+            strong Prise en charge :
+            'Date :
+            = order.start_date
+            br
+            'Lieu :
+            = order.pick_up_place
+            p
+            strong Retour du véhicule :
+            'Date :
+            = order.end_date
+            br
+            'Lieu :
+            = order.return_place
+        br
+
 
 
 
