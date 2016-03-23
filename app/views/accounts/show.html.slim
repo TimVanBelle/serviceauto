@@ -37,27 +37,17 @@
   .formulaireprofil
     .contenair
       .row.card-home
-        h2 Vos Commandes :
+        h2 Vos Reservations :
 
         - @orders.each do |order|
-          | Date et lieu de prise en charge :
+          p Type de service :
+          = order.service_type
+          p Date et lieu de prise en charge :
           = order.start_date
           = order.pick_up_place
-          | Date et lieu de retour du véhicule :
+          p Date et lieu de retour du véhicule :
           = order.end_date
           = order.return_place
-          | Type de service :
-          = order.service_type
-  / .formulairecommande
-  /       .row.card-home
-  /         h2 Compléter votre commande
-  /       form action="#{services_path}"
-  /         .col-xs-4 style=("\n    text-align: left;\n")
-  /           select.form-control name="prestation"
-  /             - @categories.each do |category|
-  /               option
-  /                 = category
-  /         .col-xs-3 style=("\n    text-align: left;\n")
-  /           button type="submit" class="btn btn-default" rechercher
+
 
 

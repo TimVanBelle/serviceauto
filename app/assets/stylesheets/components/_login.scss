@@ -10,7 +10,7 @@ body.devise_sessions {
   border-radius: 5px;
   margin-right: 20px;
   margin-top: 20px;
-
+  margin-bottom: 20px;
 }
 
 .valid{
@@ -18,9 +18,6 @@ body.devise_sessions {
   margin-right: 40px;
 }
 
-#lienvalid{
-   margin-right: 40px;
-}
 
 .formulaire {
   padding: 50px;
@@ -29,6 +26,12 @@ body.devise_sessions {
   color: grey;
   margin-top: 60px;
   margin-bottom: 30px;
+  border-radius: 4px;
+
+  h3 {
+     margin-bottom: 30px;
+     color: white;
+  }
 }
 
 
@@ -53,7 +56,6 @@ p {
     border: 1px solid #CCC;
     height: 48px;
     font-size: 14px;
-    // background-color: rgba(255,255,255,0.35);
     color: grey;
     border-radius: 5px;
     width: 100%;
@@ -64,13 +66,7 @@ p {
     margin: 20px;
     font-size: 40px;
  }
- // .checkbox input {
- //  margin: 0;
- //  position: initial;
- //  margin-right: 4px;
- //  margin-top: 10px;
- // }
- //
+
 
  .btn {
   background-color: #EE5F5B ;
@@ -88,12 +84,9 @@ p {
  }
 
 #log {
- // border: 1px solid white;
- // color: white;
- border-radius: 5px;
- // padding-left:20px;
- // padding-right: 20px;
-background-color: #EE5F5B;
+
+  border-radius: 5px;
+  background-color: #EE5F5B;
 }
 
 

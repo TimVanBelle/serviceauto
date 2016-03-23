@@ -18,14 +18,10 @@
   <%= render 'shared/flashes' %>
   <%= yield %>
 
-
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
-  <%= yield :javascripts %>
-
-
   <%= render 'shared/footer' %>
 
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= yield :javascripts %>
 
 </body>
 </html>
