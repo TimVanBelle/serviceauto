@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # mount_uploader :picture, PhotoUploader
+
   def orders
     orders = []
     self.cars.each do |car|

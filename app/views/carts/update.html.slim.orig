@@ -1,0 +1,90 @@
+
+  div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3"
+    .formulairerecapcde
+
+      .row
+        .col-xs-12
+          h2 Veuillez compléter vos reservations
+
+          / h2 Résumé de votre commande :
+          - current_order.order_items.each do |item|
+            div
+
+              .col-xs-8
+                p = item.service.title
+              .col-xs-4
+                p = "#{item.service.price} euros"
+
+          div
+            .col-xs-8
+              p Les frais d'intervention d'Alfred
+            .col-xs-4
+              p 25 euros
+          div
+            .col-xs-8
+             p Total
+             - price = current_order.subtotal + 25.0
+            .col-xs-4
+             p = "#{price} euros"
+
+      .row
+        .col-xs-12
+          = simple_form_for current_order do |f|
+            fieldset
+              legend Votre voiture
+
+              .col-xs-12
+<<<<<<< HEAD
+                = f.input :car_id, label: " ", collection: current_user.cars.map {|v,k| ["#{v.car_maker} - #{v.model} - #{v.color} ", v.id]}, selected: current_user.cars.first.id
+=======
+                = f.input :car_id, label: false, collection: current_user.cars.map {|v,k| ["#{v.car_maker} - #{v.model} - #{v.color} ", v.id]}, selected: current_user.cars.first.id
+
+
+>>>>>>> eacd7de8610301e051f9a37bffabdff16abda56c
+            fieldset
+              legend Date et lieu de prise en charge :
+              .col-xs-12
+                .form-group
+                  .input-group.date id='datetimepicker6'
+                    input class="form-control" name="order[start_date]"
+                    span class="input-group-addon"
+                      span class="glyphicon glyphicon-calendar"
+                  = f.input :pick_up_place,label: false, as: :uuid, placeholder:"Lieu de prise en charge", name:"address"
+
+
+            fieldset
+              legend Date et lieu de retour :
+              .form-group
+                .col-xs-12
+                  .input-group.date id='datetimepicker7'
+                    input class="form-control" name="order[end_date]"
+                    span class="input-group-addon"
+                      span class="glyphicon glyphicon-calendar"
+                  = f.input :return_place, label: false, as: :uuid, placeholder:"Lieu de retour", name:"address"
+
+            fieldset
+              legend Commentaire :
+
+              .form-group
+              .col-xs-12
+                = f.input :comment, label: false, as: :text, row:"4"
+
+              div
+              .col-xs-12
+                = f.submit 'Valider', class: 'btn btn-default col-xs-12 text-center', id:"log"
+
+
+
+          - content_for :javascripts
+            javascript:
+              $(function () {
+                  $('#datetimepicker6').datetimepicker().data("DateTimePicker").minDate(new Date());
+                  $('#datetimepicker7').datetimepicker({
+                    useCurrent: false //Important! See issue #1075
+                  });
+
+                  $("#datetimepicker6").on("dp.change", function (e) {
+                    $('#datetimepicker7').data("DateTimePicker").minDate(e.date.add(4, 'hours'));
+                  });
+              });
+

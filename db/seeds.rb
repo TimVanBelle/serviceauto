@@ -5,11 +5,11 @@ Prestataire.create!(name: 'Speedy up', address: '43 rue de la Blanche Porte 5920
 Prestataire.create!(name: 'Jacky Mécano', address: '3 rue des Champs 59223 Roncq')
 Prestataire.create!(name: 'Ma Belle Auto', address: '143 avenue de la Liberté 59000 Lille')
 
-Groom.create!(name: 'Tim', mail:'groom1@tata.com', rib:'123', driving_licence:'driving1', phone_number:'0603453401', picture:' ', address: '13 rue de la Gaité 59100 Roubaix')
-Groom.create!(name: 'Samy', mail:'groom2@tata.com', rib:'456', driving_licence:'driving2', phone_number:'0603453402', picture:' ', address: '31 rue de la Fonderie 59200 Tourcoing')
-Groom.create!(name: 'Louise', mail:'groom3@tata.com', rib:'234', driving_licence:'driving3', phone_number:'0603453403', picture:' ', address: '43 rue de la Blanche Porte 59200 Tourcoing')
-Groom.create!(name: 'Elliot', mail:'groom4@tata.com', rib:'567', driving_licence:'driving4', phone_number:'0603453404', picture:' ', address: '3 rue des Champs 59223 Roncq',)
-Groom.create!(name: 'Ector', mail:'groom5@tata.com', rib:'876', driving_licence:'driving5', phone_number:'0603453405', picture:' ', address: '143 avenue de la Liberté 59000 Lille')
+Groom.create!(name: 'Tim', mail:'groom1@tata.com', rib:'123', driving_licence:'driving1', phone_number:'0603453401', picture:'', address: '13 rue de la Gaité 59100 Roubaix')
+Groom.create!(name: 'Samy', mail:'groom2@tata.com', rib:'456', driving_licence:'driving2', phone_number:'0603453402', picture:'', address: '31 rue de la Fonderie 59200 Tourcoing')
+Groom.create!(name: 'Louise', mail:'groom3@tata.com', rib:'234', driving_licence:'driving3', phone_number:'0603453403', picture:'', address: '43 rue de la Blanche Porte 59200 Tourcoing')
+Groom.create!(name: 'Elliot', mail:'groom4@tata.com', rib:'567', driving_licence:'driving4', phone_number:'0603453404', picture:'', address: '3 rue des Champs 59223 Roncq')
+Groom.create!(name: 'Ector', mail:'groom5@tata.com', rib:'876', driving_licence:'driving5', phone_number:'0603453405', picture:'', address: '143 avenue de la Liberté 59000 Lille')
 
 Service.create!(title: 'Vidange', price: 100, content: 'CCCCCCCCCCCCC', category: 'entretien')
 Service.create!(title: 'Révision', price: 120, content: 'Rrrrrrrrrrr', category: 'entretien')
