@@ -10,6 +10,15 @@ class Service < ActiveRecord::Base
   #default_scope { where(active: true) }
   #
 
+  def self.search(term = nil)
+    if term
+      @services = self.where(category: term)
+    else
+      @services = self.all
+    end
+    @services
+  end
+
   def self.categories
     self.select(:category).uniq.map(&:category)
   end

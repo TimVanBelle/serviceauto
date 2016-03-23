@@ -2,9 +2,11 @@ class PaymentsController < ApplicationController
   before_action :set_order
 
   def new
+    check_order_step 'confirmed'
   end
 
   def create
+    check_order_step 'confirmed'
     @amount = current_order.total
 
   customer = Stripe::Customer.create(
@@ -20,9 +22,10 @@ class PaymentsController < ApplicationController
     currency:     'eur'
   )
 
-  @order.update(state: 'paid')
+  @order.pay
+  @order.save!
   authorize @order
-  redirect_to order_path(@order)
+  redirect_to account_path
 
 rescue Stripe::CardError => e
   flash[:error] = e.message
@@ -32,6 +35,7 @@ rescue Stripe::CardError => e
 private
 
   def set_order
-    @order = Order.find(params[:order_id])
+    @order = current_order
+    authorize @order
   end
 end
