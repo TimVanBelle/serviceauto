@@ -10,7 +10,7 @@
 
   <%= f.fields_for :profils do |p| %>
 
-    <%= p.text_field :picture, label: false, placeholder:'Photo'%><br>
+    <%= p.file_field :picture %><br>
     <%= p.text_field :first_name, label: false, placeholder:'Prenom'%><br>
     <%= p.text_field :last_name, label: false, placeholder:'Nom'%><br>
     <%= p.text_field :address, label: false, placeholder:'Adresse'%><br>

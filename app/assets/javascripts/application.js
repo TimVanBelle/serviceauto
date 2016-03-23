@@ -12,9 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap
 //= require moment
 //= require moment/fr
 //= require bootstrap-datetimepicker
+//= require autocomplete
 

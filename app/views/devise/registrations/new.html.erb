@@ -15,7 +15,7 @@
             <%= p.input :first_name, label: false, placeholder:'Prenom'%>
             <%= p.input :last_name, label: false, placeholder:'Nom'%>
             <%= p.input :address, label: false, placeholder:'Adresse'%>
-            <%= p.input :picture, label: false, placeholder:'Photo'%>
+            <%= p.input :picture %>
             <% end %>
             <%= f.input :email,label: false, placeholder:'Email', required: true, autofocus: true, autocomplete: "off" %>
             <%= f.input :password, label: false, placeholder: 'Mot de passe', required: true, hint: ("#{@minimum_password_length} caracteres minimum" if @minimum_password_length) %>
