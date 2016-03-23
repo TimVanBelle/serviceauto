@@ -1,0 +1,50 @@
+<<<<<<< HEAD
+<div class="col-xs-12">
+  <div class="well">
+
+    <div class="row">
+
+      <div class="col-xs-6">
+      <!-- <div class="carts"> -->
+        <h4><%= service.title %></small></h4>
+        <h6><%= service.content %></h6>
+      </div>
+
+
+      <div class="col-xs-6">
+        <div class="prix">
+          <!-- <div> -->
+           <%= form_for order_item, remote: true do |f| %>
+            <h4 class="text-right"><span style="color: #EE5F5B"><%= number_to_currency service.price %></span></h4>
+
+          <%= f.hidden_field :quantity, value: 1 %>
+              <%= f.hidden_field :service_id, value: service.id %>
+              <%= f.submit "Reservez", class: "btn btn-primary", id:"resabtn" %>
+            <!-- </div> -->
+          </div>
+
+      <% end %>
+=======
+<div class="well">
+
+  <div class="row">
+    <div class="col-xs-6">
+      <h4><%= service.title %></h4>
+      <h6><%= service.content %></h6>
+    </div>
+
+    <div class="col-xs-6">
+      <div class="prix">
+        <%= form_for service, url: cart_cart_items_path, method: :post, remote: true do |f| %>
+        <h4 class="text-right">
+          <span style="color: #EE5F5B"><%= number_to_currency service.price %></span>
+        </h4>
+
+        <%= f.hidden_field :service_id, value: service.id %>
+        <%= f.submit "Reservez", class: "btn btn-primary", id:"resabtn" %>
+        <% end %>
+>>>>>>> 1afa49364d43bbf88c1fdf7c805b31597aec8966
+      </div>
+    </div>
+  </div>
+</div>

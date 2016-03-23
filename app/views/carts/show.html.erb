@@ -5,10 +5,12 @@
         <%= render "shopping_cart" %>
       </div>
   </div>
-    <div class="row">
-      <div class="col-xs-12 valid">
-        <%= link_to "J'ai encore quelque chose à demander à Alfred ", services_path, id: "linksvalid" %>
-        <%= button_to "Valider", carts_path, method: 'put',class: 'btn', id: "btnvalid" %>
-      </div>
+
+  <div class="row">
+    <div class="col-xs-12 valid">
+      <%= link_to "J'ai encore quelque chose à demander à Alfred ", services_path, id: "linksvalid" %>
+      <%= button_to "Valider", order_path, method: :post, class: 'btn', id: "btnvalid" %>
     </div>
   </div>
+
+</div>

@@ -42,7 +42,7 @@
             <li><%= link_to t(".sign_in", default: "Connexion"), new_user_session_path%></li>
            <%end%>
           </li>
-          <li> <%= link_to  "#{  current_order.order_items.size} #{number_to_currency current_order.subtotal}", carts_path, class: "[ pull-right glyphicon glyphicon-shopping-cart ]"%></li>
+          <li> <%= link_to  "#{  current_order.items_count} #{number_to_currency current_order.subtotal}", cart_path, class: "[ pull-right glyphicon glyphicon-shopping-cart ] cart-text"%></li>
           </li>
         </form>
       </div>

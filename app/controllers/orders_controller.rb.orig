@@ -14,12 +14,22 @@ class OrdersController < ApplicationController
   end
 
   def update
+<<<<<<< HEAD
+    find_order
+    start_time = params[:order][:start_date].to_datetime
+    end_date = params[:order][:end_date].to_datetime
+    subtotal = current_order.total
+    authorize @order
+    if @order.update_attributes(create_params)
+      redirect_to account_orders_path @order
+=======
     authorize current_order
     check_order_step 'new_order'
     if current_order.update_attributes(order_params)
       current_order.confirm
       current_order.save!
       redirect_to new_order_payments_path
+>>>>>>> 1afa49364d43bbf88c1fdf7c805b31597aec8966
     else
       render :edit
     end
