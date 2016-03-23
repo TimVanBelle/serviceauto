@@ -7,22 +7,22 @@ div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 form-rest
         = simple_form_for(@car) do |r|
           div class="col-xs-12 col-sm-5 col-lg-5"
             div class="form-login"
-              h1 Ajoutez une voiture
+              h3 Ajoutez un vehicule
               = r.error_notification
               div class="form-group"
-                = r.input :car_maker, { :maxlength => 25 }
+                = r.input :car_maker, placeholder:'Modèle', label: false
 
               div class="form-group"
-                = r.input :model
+                = r.input :model, label: false, placeholder:'Modèle'
 
               div class="form-group"
-                = r.input :color
+                = r.input :color, label: false,placeholder:'Couleur'
 
               div class="form-group"
-                = r.input :registration_plate
+                = r.input :registration_plate, label: false, placeholder:'Immatriculation'
 
               div class="form-group"
-                = r.input :mileage
+                = r.input :mileage, label: false, placeholder:'Kilomètrage'
 
               = r.submit "Valider", class: "btn btn-primary"
 

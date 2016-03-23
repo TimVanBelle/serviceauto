@@ -16,15 +16,7 @@
            <%= form_for order_item, remote: true do |f| %>
             <h4 class="text-right"><span style="color: #EE5F5B"><%= number_to_currency service.price %></span></h4>
 
-
-          <!-- </div> -->
-
           <%= f.hidden_field :quantity, value: 1 %>
-
-          <!-- <div class="input-group">
-            <%= f.number_field :quantity, value: 1, class: "form-control", min: 1, id:"qtybtn" %> -->
-          <!-- <div class="input-group-btn"> -->
-
               <%= f.hidden_field :service_id, value: service.id %>
               <%= f.submit "Reservez", class: "btn btn-primary", id:"resabtn" %>
             <!-- </div> -->
