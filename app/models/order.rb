@@ -37,12 +37,12 @@ class Order < ActiveRecord::Base
 
   validates :state, presence: true
 
-  with_options unless: :cart? do |admin|
-    validates :start_date, presence: true, blank: false
-    validates :end_date, presence: true, blank: false
-    validates :pick_up_place, presence: true, blank: false
-    validates :return_place, presence: true, blank: false
-    validates :car, presence: true
+  with_options unless: :cart? do |order|
+    order.validates :start_date, presence: true, blank: false
+    order.validates :end_date, presence: true, blank: false
+    order.validates :pick_up_place, presence: true, blank: false
+    order.validates :return_place, presence: true, blank: false
+    order.validates :car, presence: true
   end
 
   def subtotal
@@ -66,6 +66,7 @@ class Order < ActiveRecord::Base
       unit_price: service.price,
       quantity: 1
     )
+    
     save!
   end
 
