@@ -5,41 +5,31 @@
        .container
         .row.card-home
 
-            h2 Vos Informations :
+            h2 Informations :
 
             p = @profil.picture
-            p
-            ' Prénom : #{@profil.first_name}
+            p Prénom : #{@profil.first_name}
 
-            p
-            ' Nom : #{@profil.last_name}
+            p Nom : #{@profil.last_name}
 
-            p
-            ' E-mail : #{@user.email}
+            p E-mail : #{@user.email}
 
-            = link_to "Modifier", edit_user_registration_path(@user), class: "links"
+            p = link_to "Modifier mes informations", edit_user_registration_path(@user), class: "links"
 
         .row.card-home
-          h2 Vos Voitures :
+          h2 Véhicules :
           - @cars.each do |car|
             div
-              p
-              ' Marque : #{car.car_maker}
-              p
-              ' Modèle : #{car.model}
-              p
-              ' Couleur : #{car.color}
-              p
-              ' Kilométrage : #{car.mileage}
-              p
-              ' Plaque d'immatriculation : #{car.registration_plate}
-              = link_to "Modifier", edit_car_path(car), class: "links"
+
+              p Marque : #{car.car_maker}
+              p Modèle : #{car.model}
+              p Couleur : #{car.color}
+              p Kilométrage : #{car.mileage}
+              p Plaque d'immatriculation : #{car.registration_plate}
+              p = link_to "Modifier", edit_car_path(car), class: "links"
               .row
-              /   .col-lg-3.col-xs-3 style=("\n    text-align: left;\n")
-              p
-              = link_to "Supprimer ma voiture", car_path(car), data: { confirm: "Are you sure?" }, method: :delete, class: "links"
-          p
-          = link_to "Ajouter une voiture", new_car_path, class: "links"
+              p = link_to "Supprimer", car_path(car), data: { confirm: "Are you sure?" }, method: :delete, class: "links"
+          p = link_to "Ajouter", new_car_path, class: "links"
 
 
 .col-lg-6.col-xs-6

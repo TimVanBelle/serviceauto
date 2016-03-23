@@ -1,18 +1,22 @@
+<div class="container">
 <div class=carts>
-<h3 class="text-center">Vos reservations </h3>
+  <h3 class="text-center">Vos reservations </h3>
 
-<div class="shopping-cart">
-  <%= render "shopping_cart" %>
-</div>
-
-<%= render 'layouts/cart_text' %>
-
-
-
-<h4 class="text-center"><%= link_to "J'ai encore quelque chose à demandé à Alfred ", services_path%></h4>
+  <div class="shopping-cart">
+    <%= render "shopping_cart" %>
+  </div>
 
 </div>
 
-<%= button_to "Valider", carts_path, method: 'put' %>
+    </div>
+  </div> -->
+  <div class="row">
+  <div class="col-xs-12 valid">
+      <%= link_to "J'ai encore quelque chose à demander à Alfred ", services_path, id: "linksvalid" %>
+      <%= button_to "Valider", carts_path, method: 'put',class: 'btn', id: "btnvalid" %>
+    </div>
+  </div>
 
 
+
+</div>

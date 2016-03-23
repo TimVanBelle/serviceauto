@@ -1,6 +1,6 @@
 
   div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3"
-    .formulaireprofil
+    .formulairerecapcde
 
       .row
         .col-xs-12
@@ -15,17 +15,17 @@
               .col-xs-4
                 p = "#{item.service.price} euros"
 
-            div
-              .col-xs-8
-                p Les frais d'intervention d'Alfred
-              .col-xs-4
-                p 25 euros
-            div
-              .col-xs-8
-               p Total
-               - price = current_order.subtotal + 25.0
-              .col-xs-4
-               p = "#{price} euros"
+          div
+            .col-xs-8
+              p Les frais d'intervention d'Alfred
+            .col-xs-4
+              p 25 euros
+          div
+            .col-xs-8
+             p Total
+             - price = current_order.subtotal + 25.0
+            .col-xs-4
+             p = "#{price} euros"
 
       .row
         .col-xs-12
@@ -33,7 +33,11 @@
             fieldset
               legend Votre voiture
               .col-xs-12
-                = f.input :car, label: " ", collection: current_user.cars.map {|v,k| ["#{v.car_maker} - #{v.model} - #{v.color} ", v.id]}, selected: current_user.cars.first.id
+<<<<<<< HEAD
+                = f.input :car, label: false, collection: current_user.cars.map {|v,k| ["#{v.car_maker} - #{v.model} - #{v.color} ", v.id]}, selected: current_user.cars.first.id
+=======
+                = f.input :car_id, label: " ", collection: current_user.cars.map {|v,k| ["#{v.car_maker} - #{v.model} - #{v.color} ", v.id]}, selected: current_user.cars.first.id
+>>>>>>> fe3b9331311b2c1a93dfdd109e5ca86ad8552d8c
 
             fieldset
               legend Date et lieu de prise en charge :
@@ -43,7 +47,7 @@
                     input class="form-control" name="order[start_date]"
                     span class="input-group-addon"
                       span class="glyphicon glyphicon-calendar"
-                  = f.input :pick_up_place, as: :uuid, placeholder:"Lieu de prise en charge", name:"address"
+                  = f.input :pick_up_place,label: false, as: :uuid, placeholder:"Lieu de prise en charge", name:"address"
 
 
             fieldset
@@ -54,14 +58,14 @@
                     input class="form-control" name="order[end_date]"
                     span class="input-group-addon"
                       span class="glyphicon glyphicon-calendar"
-                  = f.input :return_place, as: :uuid, placeholder:"Lieu de retour", name:"address"
+                  = f.input :return_place, label: false, as: :uuid, placeholder:"Lieu de retour", name:"address"
 
             fieldset
               legend Commentaire :
 
               .form-group
               .col-xs-12
-                = f.input :comment, as: :text, row:"4"
+                = f.input :comment, label: false, as: :text, row:"4"
 
               div
               .col-xs-12
