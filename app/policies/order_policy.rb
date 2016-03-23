@@ -14,12 +14,16 @@ class OrderPolicy < ApplicationPolicy
     record.user == user
   end
 
+  def edit?
+    true
+  end
+
   def create?
-    record.user == user
+    true
   end
 
   def update?
-    user != nil
+    edit?
   end
 
   def destroy?
