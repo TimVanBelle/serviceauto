@@ -1,8 +1,28 @@
-h1 Voiçi votre Alf du jour #{groom.firt_name}
+h1 Voiçi votre Alfred du jour #{groom.firt_name}
 
 = groom.firt_name
 = groom.last_name
 = cl_image_tag @groom.picture, height: 100, width: 100
 
+/ <%= javascript_tag do %>
+/   $(document).ready(function() {
+/     alert('<%= j @alert_message %>');
+/   });
+/ <% end %>
 
+/ <% content_for(:after_js) do %>
+/   <%= javascript_tag do %>
+/     $(document).ready(function() {
+/       alert('<%= j @alert_message %>');
+/     });
+/   <% end %>
+/ <% end %>
 
+/ <% content_for(:after_js) do %>
+/   <%= javascript_tag do %>
+/     $(document).ready(function() {
+/       var coord = <%= raw @groom_coordinates %>;
+/       alert('Groom coordinates are ' + coord.lat + ', ' + coord.lng);
+/     });
+/   <% end %>
+/ <% end %>
