@@ -1,55 +1,34 @@
 class OrdersController < ApplicationController
 
-  def index
-    @orders = policy_scope(Order)
-  end
-
-  def new
-    @order = Order.new
+  def edit
+    authorize current_order
+    check_order_step 'new_order'
   end
 
   def create
-    @order = Order.new(create_params)
+    current_order.make_order
+    current_order.save!(validate: false)
 
-    if @order.save
-      redirect_to @order
-    else
-      render :new
-    end
-  end
-
-  def edit
-    find_order
+    authorize current_order
+    redirect_to action: :edit
   end
 
   def update
-    raise
-    find_order
-    start_time = params[:order][:start_date].to_datetime
-    end_date = params[:order][:end_date].to_datetime
-    subtotal = current_order.total
-    authorize @order
-    if @order.update_attributes(create_params)
-      redirect_to account_orders_path @order
+    authorize current_order
+    check_order_step 'new_order'
+    if current_order.update_attributes(order_params)
+      current_order.confirm
+      current_order.save!
+      redirect_to new_order_payments_path
     else
       render :edit
     end
   end
 
-  def destroy
-    if @order.destroy
-      redirect_to @customer
-    else
-      render :new
-    end
-  end
-
   private
-  def find_order
-    @order = Order.find(params[:id])
+
+  def order_params
+    params.require(:order).permit(:pick_up_place, :start_date, :return_place, :end_date, :car_id)
   end
 
-  def create_params
-    params.require(:order).permit(:start_date, :end_date, :pick_up_place, :return_place, :comment, :car_id, :subtotal)
-  end
 end

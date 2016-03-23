@@ -3,17 +3,17 @@ class CarsController < ApplicationController
   before_action :find_car, only: [:edit, :show, :update, :destroy]
 
   def new
+    session[:from_order] = request.path.match(/\/order\/.*/).present?
     @car = Car.new
     authorize @car
   end
 
   def create
-
     @car = Car.new(create_params)
     authorize @car
     @car.user = current_user
     if @car.save!
-      redirect_to account_path
+      redirect_to session[:from_order] ? edit_order_path : account_path
     else
       render :new
     end
