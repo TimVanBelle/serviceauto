@@ -1,0 +1,14 @@
+.container.container-min-size
+  .row
+    .col-xs-12.text-center
+      h1 Que peut faire Alfred pour vous ?
+      h2
+        'Le forfait unique d'Alfred est facturé en sus:
+        span style="color: #EE5F5B"
+          '25€
+
+  .row
+    - @services.each do |service|
+      = render "product_row", service: service
+  div
+    h4.text-center = link_to "Voir mes reservations", cart_path

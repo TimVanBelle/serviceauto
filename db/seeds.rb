@@ -18,11 +18,18 @@ Service.create!(title: 'Révision', price: 149, content: "La Révision est un en
 Service.create!(title: 'Lavage tunnel', price: 9, content: "Lavage impeccable qui préserve la carosserie et la peinture de votre véhicule", category: 'lavage')
 Service.create!(title: 'Lavage à la main', price: 49, content: "Nettoyage à la main à l'intérieur et à l'extérieur du véhicule", category: 'lavage')
 Service.create!(title: 'Carte grise en prefecture', price: 32, content: "Formalité administrative et remise du certificat d'imatriculation", category: 'carte grise')
+p 'groom'
+
+
+
+p 'service'
 
 OrderStatus.create!(name: "In Progress")
 OrderStatus.create!(name: "Placed")
 OrderStatus.create!(name: "Shipped")
 OrderStatus.create!(name: "Cancelled")
+
+p 'OrderStatus'
 
 Car.create!(registration_plate: '123 AB 123', car_maker: 'audi', model: 'tt', color: 'noire', mileage: '10000')
 Car.create!(registration_plate: '124 AB 123', car_maker: 'renault', model: 'tt', color: 'bleu', mileage: '12000')
@@ -30,12 +37,15 @@ Car.create!(registration_plate: '125 AB 123', car_maker: 'peugeot', model: 'tt',
 Car.create!(registration_plate: '126 AB 123', car_maker: 'audi', model: 'tt', color: 'noire', mileage: '70000')
 Car.create!(registration_plate: '127 AB 123', car_maker: 'BMW', model: 'tt', color: 'gris', mileage: '60000')
 
+p 'car'
+
 Order.create!(start_date: Date.today, end_date: Date.today + 1, service_type: 'pneumatiques', price: '80', pick_up_place: 'place du marché', return_place: 'place du marché', service_address: 'rue du garagiste', comment: ' ', status: '0', car_id: '3' , groom_id: '1')
 Order.create!(start_date: Date.today, end_date: Date.today + 1, service_type: 'clés', price: '15', pick_up_place: 'place 1', return_place: 'place du marché', service_address: 'rue des clés', comment: ' ', status: '0', car_id: '2' , groom_id: '1')
 Order.create!(start_date: Date.today, end_date: Date.today + 1, service_type: 'pneumatiques', price: '80', pick_up_place: 'place 2', return_place: 'place 2', service_address: 'rue 6', comment: ' ', status: '0', car_id: '3' , groom_id: '1')
 Order.create!(start_date: Date.today, end_date: Date.today + 1, service_type: 'vidange', price: '30', pick_up_place: 'place 3', return_place: 'place 3', service_address: 'place de la victoire', comment: ' ', status: '0', car_id: '5' , groom_id: '1')
 Order.create!(start_date: Date.today, end_date: Date.today + 1, service_type: 'revision', price: '120', pick_up_place: 'place 4', return_place: 'place 4', service_address: 'place du marché', comment: ' ', status: '0', car_id: '1' , groom_id: '1')
 
+p 'order'
 
 flo = User.create!(email: 'flo@gmail.com', password: 'flogmail')
 sam = User.create!(email: 'sam@gmail.com', password: 'samgmail')
@@ -48,6 +58,10 @@ p2 = sam.profils.build(first_name: 'Sam', last_name: 'Durant',address: '13 rue d
 p3 = tim.profils.build(first_name: 'Tim', last_name: 'Dubus',address: '13 rue de la Gaité 59100 Roubaix', phone_number: '03 20 12 45 45')
 p4 = ben.profils.build(first_name: 'Ben', last_name: 'Ducar',address: '13 rue de la Gaité 59100 Roubaix', phone_number: '03 20 12 45 45')
 p5 = nico.profils.build(first_name: 'Nico', last_name: 'Duroi',address: '13 rue de la Gaité 59100 Roubaix', phone_number: '03 20 12 45 45')
+
+
+
+
 
 p1.save
 p2.save
