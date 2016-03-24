@@ -67,12 +67,13 @@
                   li = order_item.service.title
             td
               ul
-                li = order.start_date
+                li = I18n.localize order.start_date, format: :long
                 li = order.pick_up_place
             td
               ul
-                li = order.end_date
+                li = I18n.localize order.end_date, format: :long
                 li = order.return_place
+
 
 
 

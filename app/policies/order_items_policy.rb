@@ -18,6 +18,6 @@ class OrderItemsPolicy < ApplicationPolicy
   end
 
   def destroy?
-    self
+    true
   end
 end
