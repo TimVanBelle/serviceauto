@@ -48,13 +48,12 @@
           <%end%>
         </li>
 
-
-
-        <%= render 'layouts/cart_text' %>
-
-        <li class="dropdown">
-
+      <% if current_order.id %>
+        <li class="cart-text-hitbox">
+          <%= render 'layouts/cart_text' %>
         </li>
+      <% end %>
+
 
       </form>
     </div>
