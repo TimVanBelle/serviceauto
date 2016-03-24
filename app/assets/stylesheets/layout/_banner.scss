@@ -126,7 +126,7 @@
 .banner_nostarifs{
   background-image: url('http://res.cloudinary.com/dtngvyuf6/image/upload/v1458568417/Alfred/Alfred3_cle%CC%81.png');
   height: 100vh;
-  opacity: 0.7;
+  opacity: 0.8;
   background-repeat: no-repeat;
   background-blend-mode: lighten;
   background-size: cover;
@@ -145,11 +145,13 @@
 
 .banner_nostarifs h2 {
   text-shadow: 0 1px 3px rgb(51, 51, 51);
+
 }
 
 .banner_nostarifs h3 {
-  text-shadow: 0 1px 3px rgb(51, 51, 51);
-  color: white;
+  // text-shadow: 0 1px 3px rgb(51, 51, 51);
+  color: #5CA4A9;
+
 }
 
 .banner_nostarifs p {
