@@ -1,77 +1,79 @@
-/ h6 Profil de : #{@profil.first_name} #{@profil.last_name
+.container.profil
+  .row
+    .col-sm-6.col-xs-12.profil-part
+      h2 Informations :
+      .row
+        .col-xs-6
+          - if @profil.picture.url
+            = image_tag(@profil.picture, class: 'img-responsive')
+          - else
+            = image_tag('prisonnier.jpg', class: 'img-responsive')
 
-.col-lg-6.col-xs-6
-    .formulaireprofil
-       .container
-        .row.card-home
+        .col-xs-6
+          p Prénom : #{@profil.first_name}
 
-            h2 Informations :
+          p Nom : #{@profil.last_name}
 
-            p = @profil.picture
-            p Prénom : #{@profil.first_name}
+          p E-mail : #{@user.email}
 
-            p Nom : #{@profil.last_name}
+        .col-xs-12
+          = link_to "Modifier mes informations", edit_user_registration_path(@user), class: "btn btn-default"
 
-            p E-mail : #{@user.email}
+    .col-xs-12.profil-part
+        h2 Véhicules :
+        table.table.table-striped
+          thead
+            tr
+              th Marque
+              th Modèle
+              th Couleur
+              th Kilométrage
+              th Immatriculation
+              th
+            - @cars.each do |car|
+              tr
+                td = car.car_maker
+                td = car.model
+                td = car.color
+                td = car.mileage
+                td = car.registration_plate
+                td
+                  = link_to "Modifier", edit_car_path(car), class: "btn btn-default btn-xs"
+                  = link_to "Supprimer", car_path(car), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger btn-xs"
+        p = link_to "Ajouter un nouveau véhicule", new_car_path, class: "btn btn-primary"
 
-            p = link_to "Modifier mes informations", edit_user_registration_path(@user), class: "links"
 
-        .row.card-home
-          h2 Véhicules :
-          - @cars.each do |car|
-            div
+    .col-xs-12.profil-part
+      h2 Vos Reservations :
+      table.table.table-striped
+        thead
+          tr
+            th Voiture
+            th Type de service
+            th Prise en charge
+            th Retour du véhicule
+        tbody
+          - @orders.each do |order|
+            td
+              - car = Car.find(order.car_id)
+              = car.car_maker
+              ' -
+              = car.model
+              ' -
+              = car.color
+            td
+              ul
+                - order.order_items.each do |order_item|
+                  li = order_item.service.title
+            td
+              ul
+                li = I18n.localize order.start_date, format: :long
+                li = order.pick_up_place
+            td
+              ul
+                li = I18n.localize order.end_date, format: :long
+                li = order.return_place
 
-              p Marque : #{car.car_maker}
-              p Modèle : #{car.model}
-              p Couleur : #{car.color}
-              p Kilométrage : #{car.mileage}
-              p Plaque d'immatriculation : #{car.registration_plate}
-              p = link_to "Modifier", edit_car_path(car), class: "links"
-              .row
-              p = link_to "Supprimer", car_path(car), data: { confirm: "Are you sure?" }, method: :delete, class: "links"
-          p = link_to "Ajouter", new_car_path, class: "links"
-
-
-.col-lg-6.col-xs-6
-
-  .formulaireprofil
-    .contenair
-      .row.card-home
-
-        h2 Vos Reservations :
-        - @orders.take(3).each do |order|
-          br
-          div
-            p
-            strong Voiture :
-            - car = Car.find(order.car_id)
-            '  #{car.car_maker} - #{car.model} - #{car.color}
-
-            p
-            strong Type de service :
-            - order.order_items.each do |order_items|
-              - service = order_items.service_id
-              p
-              '-
-              = Service.find(service).title
-
-            p
-            strong Prise en charge :
-            br
-            'Le
-            = I18n.localize order.start_date, format: :long
-            br
-            'Lieu :
-            = order.pick_up_place
-            p
-            strong Retour du véhicule :
-            br
-            'Le
-            = I18n.localize order.end_date, format: :long
-            br
-            'Lieu :
-            = order.return_place
-        br
 
 
 

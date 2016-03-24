@@ -1,0 +1,13 @@
+.col-xs-12.col-sm-4
+  .service-item class="#{service.category.delete(' ')}"
+    .service-item--content
+      .title
+        h4 = service.title
+      .desc
+        p = service.content
+      .price
+        span style="color: #EE5F5B" = number_to_currency service.price
+      .delete
+        = link_to cart_cart_item_path(order_item), { data: { confirm: "Etes vous sûr de vouloir supprimer le produit '\#{order_item.service.title}' de votre panier?" }, method: :delete, remote: true, }
+          i.fa.fa-trash
+          'Supprimer

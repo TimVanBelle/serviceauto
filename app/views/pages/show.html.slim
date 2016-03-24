@@ -1,3 +1,5 @@
+
+/ == render partial: "shared/navbar"
 .banner
   .banner-content
     .container
@@ -7,56 +9,62 @@
           h4 réservez les services de notre concierge auto Alfred
           br
 
-      = form_tag(root_path, method: "get", class: 'form form-inline' )
-        .form-group
-          = text_field_tag :search, nil, placeholder: "13 rue du service 59000 LILLE", class: 'input-lg form-control', id: 'user_input_autocomplete_address'
-        button.btn.btn-primary type="submit" Valider
-
-      / form.form-inline action="/grooms#choice"
-      /   .form-group
-      /     label for="geolocalizeAddress"  "Vérfier qu'Alfred est proche de chez vous"
-      /     input#geolocalizeAddress.form-control name="address" placeholder=("13 rue du service 59000 Lille") type="text" /
-      /   button.btn.btn-default type="submit"  Valider
+          = form_tag(root_path, method: "get", class: 'form form-inline')
+            .form-group
+              = text_field_tag :search, nil, placeholder: "13 rue du service 59000 LILLE", class: 'input-lg form-control', id: 'user_input_autocomplete_address'
+            button.btn.btn-primary type="submit" Valider
 
       .row.card-home
         .col-lg-12.col-xs-12
-          - if @service_available
-            form action="#{services_path}"
-              .col-xs-offset-3.col-xs-8
-                select.form-control name="prestation" id="prestation" onchange="submit()"
-                  option disabled="" selected="" value=""
-                    | - Choisissez ce qu'Alfred peut faire pour vous ;-)!
-                  - @categories.each do |category|
-                    option
-                      = category
-          - else
-            p Il va falloir déménager pour utiliser Service Auto !
-
+        form action="#{services_path}"
+          .col-xs-offset-3.col-xs-8
+            select.form-control name="prestation" id="prestation" onchange="submit()"
+              option disabled="" selected="" value=""
+                | - Choisissez ce qu'Alfred peut faire pour vous ;-)!
+              - @categories.each do |category|
+                option
+                  = category
           .col-xs-3 style=("\n    text-align: left;\n")
 
-.container_banner2
 
-  br
+.container_banner2
   h2 Les prestations d'Alfred
-  br
+
   .row
-    .col-xs-4.col-md-4 style=("padding: 10 10 10%")
-      = link_to "services?prestation=entretien", class: "card_entretien"
-        .card-category Entretien
-    .col-xs-4.col-md-4 style=("padding: 10 10 10%")
-      = link_to "services?prestation=carte+grise", class: "card_demarches"
-        .card-category Démarches carte grise
-    .col-xs-4.col-md-4 style=("padding: 10 10 10%")
-      = link_to "services?prestation=lavage", class: "card_lavage"
-        .card-category Lavage
-  br
-  br
+    .col-xs-4.col-md-4
+      .card_entretien
+        = link_to "services?prestation=entretien"
+          .card-category
+            'Entretien
+    .col-xs-4.col-md-4
+      .card_demarches
+        = link_to "services?prestation=carte+grise"
+          .card-category
+            'Démarches carte grise
+    .col-xs-4.col-md-4
+      .card_lavage
+        = link_to "services?prestation=lavage"
+          .card-category
+            'Lavage
 
 
 .banner_commentcamarche
   .container
     .row
       .col-lg-12.col-xs-12 style=("padding: 10px 0 100px 0;")
+        h2 Comment faire avec Alfred ?
+        .row
+          .col-xs-4.col-md-4 style=("padding: 10 10 10%")
+            = link_to "services?prestation=entretien", class: "card_entretien"
+              .card-category Entretien
+          .col-xs-4.col-md-4 style=("padding: 10 10 10%")
+            = link_to "services?prestation=carte+grise", class: "card_demarches"
+              .card-category Démarches carte grise
+          .col-xs-4.col-md-4 style=("padding: 10 10 10%")
+            = link_to "services?prestation=lavage", class: "card_lavage"
+              .card-category Lavage
+
+
 
 
 .banner_nostarifs
@@ -72,3 +80,5 @@
     .row
       .col-lg-12.col-xs-12 style=("padding: 10px 0 10px 0; margin-bottom: -100px;")
         p * pour les prestations dont les prix sont connus a postériori, comme le plein d'essence. Refacturation à prix coûtant
+
+
