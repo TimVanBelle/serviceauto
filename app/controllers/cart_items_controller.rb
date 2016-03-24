@@ -13,8 +13,8 @@ class CartItemsController < ApplicationController
 
   def destroy
     @cart = current_order
-    authorize @cart
 
+    authorize :order_items
     @cart.delete_item(params[:id])
   end
 

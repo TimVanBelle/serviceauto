@@ -45,7 +45,7 @@
             p
             strong Voiture :
             - car = Car.find(order.car_id)
-            ' #{car.car_maker} - #{car.model} - #{car.color}
+            '  #{car.car_maker} - #{car.model} - #{car.color}
 
             p
             strong Type de service :
@@ -57,15 +57,17 @@
 
             p
             strong Prise en charge :
-            'Date :
-            = order.start_date
+            br
+            'Le
+            = I18n.localize order.start_date, format: :long
             br
             'Lieu :
             = order.pick_up_place
             p
             strong Retour du véhicule :
-            'Date :
-            = order.end_date
+            br
+            'Le
+            = I18n.localize order.end_date, format: :long
             br
             'Lieu :
             = order.return_place
