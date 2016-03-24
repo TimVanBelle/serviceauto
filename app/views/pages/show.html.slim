@@ -16,31 +16,19 @@
 
       .row.card-home
         .col-lg-12.col-xs-12
-        form action="#{services_path}"
-          .col-xs-offset-3.col-xs-8
-            select.form-control name="prestation" id="prestation" onchange="submit()"
-              option disabled="" selected="" value=""
-                | - Choisissez ce qu'Alfred peut faire pour vous ;-)!
-              - @categories.each do |category|
-                option
-                  = category
-          .col-xs-3 style=("\n    text-align: left;\n")
-
+          - if @service_available
+            form action="#{services_path}"
+             .col-xs-offset-3.col-xs-8
+              select.form-control name="prestation" id="prestation" onchange="submit()"
+                option disabled="" selected="" value=""
+                  | - Choisissez ce qu'Alfred peut faire pour vous ;-)!
+                - @categories.each do |category|
+                  option
+                    = category
+          - else
+            p Il va falloir déménager pour utiliser Service Auto !
 
 .container_banner2
-
-  br
-  h2 Comment ça marche ?
-  br
-  .row
-    .col-xs-4.col-md-4 style=("padding: 10 10 10%")
-      .card_commentcamarche_1
-    .col-xs-4.col-md-4 style=("padding: 10 10 10%")
-      .card_commentcamarche_2
-    .col-xs-4.col-md-4 style=("padding: 10 10 10%")
-      .card_commentcamarche_3
-  br
-
   h2 Les prestations d'Alfred
 
   .row
@@ -60,6 +48,20 @@
           .card-category
             'Lavage
 
+
+.container_banner2
+
+  br
+  h2 Comment ça marche ?
+  br
+  .row
+    .col-xs-4.col-md-4 style=("padding: 10 10 10%")
+      .card_commentcamarche_1
+    .col-xs-4.col-md-4 style=("padding: 10 10 10%")
+      .card_commentcamarche_2
+    .col-xs-4.col-md-4 style=("padding: 10 10 10%")
+      .card_commentcamarche_3
+  br
 
 .banner_nostarifs
   .container
