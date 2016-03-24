@@ -1,27 +1,27 @@
+.background
+  div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3"
+    .formulaire
+      .login
 
-div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3"
-  .formulaire
-    .login
+        = simple_form_for(@car) do |r|
+          h2 Modifiez votre vehicule
+          = r.error_notification
+          div class="form-group"
+            = r.input :car_maker, label: false, placeholder: "Marque"
 
-      = simple_form_for(@car) do |r|
-        h2 Modifiez votre vehicule
-        = r.error_notification
-        div class="form-group"
-          = r.input :car_maker, label: false, placeholder: "Marque"
+          div class="form-group"
+            = r.input :model, label: false, placeholder: "Modèle"
 
-        div class="form-group"
-          = r.input :model, label: false, placeholder: "Modèle"
+          div class="form-group"
+            = r.input :color, label: false, placeholder: "Couleur"
 
-        div class="form-group"
-          = r.input :color, label: false, placeholder: "Couleur"
+          div class="form-group"
+            = r.input :registration_plate, label: false, placeholder: "Plaque d'immatriculation"
 
-        div class="form-group"
-          = r.input :registration_plate, label: false, placeholder: "Plaque d'immatriculation"
+          div class="form-group"
+            = r.input :mileage, label: false, placeholder: "Kilométrage"
 
-        div class="form-group"
-          = r.input :mileage, label: false, placeholder: "Kilométrage"
-
-        = r.submit "Valider", class: "btn btn-primary"
+          = r.submit "Valider", class: "btn btn-primary"
 
 
 
