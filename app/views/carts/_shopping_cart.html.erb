@@ -11,4 +11,17 @@
     <%= render 'carts/cart_row', service: order_item.service, order_item: order_item, show_total: true %>
   <% end %>
 
+  <div class="col-xs-12 col-sm-4">
+
+    <div class="service-item service-item-more text-center">
+
+      <%= link_to services_path do %>
+        <div class="picto">
+          <i class="fa fa-plus-circle"></i>
+        </div>
+        <h4> J'ai encore besoin d'Alfred !</h4>
+        <% end %>
+    </div>
+  </div>
+
 <% end %>
