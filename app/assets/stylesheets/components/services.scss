@@ -1,0 +1,95 @@
+.service-item {
+  height: 275px;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  margin: 30px 10px;
+
+  .title {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  .desc {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+
+    p {
+      color: grey;
+    }
+  }
+
+  .price {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-weight: bolder;
+  }
+
+  form {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+  }
+
+  .delete {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 30px;
+    padding: 0 10px;
+
+    a {
+      color: $green;
+    }
+  }
+}
+
+.service-item-more {
+  background-color: $green;
+
+  a {
+    color: #FFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 60px 20px;
+
+    .picto {
+      font-size: 65px;
+    }
+
+    h4 {
+      color: #FFF;
+    }
+
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}
+.service-item--content {
+  background-color: rgba(255,255,255,0.6);
+  height: 100%;
+  width: 100%;
+  &:hover {
+    background-color: rgba(255,255,255,0.8);
+  }
+}
+
+.entretien {
+  background-image: url('http://res.cloudinary.com/dtngvyuf6/image/upload/v1458572737/Entretien_auto_ua3oce.jpg');
+}
+
+.cartegrise {
+  background-image: url('http://res.cloudinary.com/dtngvyuf6/image/upload/v1458573227/carte-grise_xgagdt.jpg');
+}
+
+.lavage {
+  background-image: url('http://res.cloudinary.com/dtngvyuf6/image/upload/v1458557953/lavage_auto_zqtlzr.jpg');
+}

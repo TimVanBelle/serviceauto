@@ -1,0 +1,13 @@
+.btn-primary {
+  background-color: $green;
+  color: #FFF;
+  padding: 10px;
+  border-radius: 5px;
+  border: $green solid 2px;
+  font-weight: 600;
+
+  &:hover{
+    background-color: #FFF;
+    color: $green;
+  }
+}

@@ -1,0 +1,15 @@
+.container.container-min-size
+  .row
+    h3.text-center Vos reservations
+    .shopping-cart
+      = render "shopping_cart"
+
+      .col-xs-12.col-sm-4
+        .service-item.service-item-more.text-center
+          = link_to services_path
+            .picto
+              i.fa.fa-plus-circle
+            h4 J'ai encore besoin d'Alfred !
+  .row
+    .col-xs-12.text-right
+      = button_to "Valider ma réservation", order_path, method: :post, class: 'btn btn-primary btn-lg'
