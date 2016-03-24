@@ -9,12 +9,15 @@
 
        fieldset
          legend Votre vehicule
-
+         p
+          - car = Car.find(@order.car_id)
+          '#{car.car_maker} - #{car.model} - #{car.color}
 
        fieldset
          legend Vos prestations
 
        - current_order.order_items.each do |item|
+
          div
            .col-xs-8
              p = item.service.title
