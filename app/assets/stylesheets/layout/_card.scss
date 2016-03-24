@@ -33,6 +33,29 @@
   padding: 0 0 0%;
 }
 
+.card_commentcamarche_1 {
+  @include card;
+  background-image: url('http://res.cloudinary.com/dtngvyuf6/image/upload/v1458810543/Alfred_sans_fond-01_bmp8sw.png');
+  width: 100%;
+  padding: 0 0 0%;
+}
+
+.card_commentcamarche_2 {
+  @include card;
+  background-image: url('http://res.cloudinary.com/dtngvyuf6/image/upload/v1458810548/Alfred_sans_fond-02_x9gfwv.png');
+  width: 100%;
+  padding: 0 0 0%;
+}
+
+.card_commentcamarche_3 {
+  @include card;
+  background-image: url('http://res.cloudinary.com/dtngvyuf6/image/upload/v1458810535/Alfred_sans_fond-03_ajw1h6.png');
+  width: 100%;
+  padding: 0 0 0%;
+}
+
+
+
 .card-home {
   margin-top: 50px;
 }
