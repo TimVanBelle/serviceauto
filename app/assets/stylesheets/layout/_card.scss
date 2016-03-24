@@ -1,6 +1,6 @@
 
 @mixin card {
-  height: 275px;
+  height: 375px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   color: white;
@@ -9,7 +9,8 @@
   display: flex;
   align-item: center;
   flex-item: 0 0 20%;
-  margin-top: 50px
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 
@@ -53,8 +54,6 @@
   width: 100%;
   padding: 0 0 0%;
 }
-
-
 
 .card-home {
   margin-top: 50px;
