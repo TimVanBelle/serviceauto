@@ -8,25 +8,31 @@
           h1 PROFITEZ DU MEILLEUR
           h4 réservez les services de notre concierge auto Alfred
           br
-
-          = form_tag(root_path, method: "get", class: 'form form-inline')
-            .form-group
-              = text_field_tag :search, nil, placeholder: "13 rue du service 59000 LILLE", class: 'input-lg form-control', id: 'user_input_autocomplete_address'
-            button.btn.btn-primary type="submit" Valider
+          - unless params[:search]
+            = form_tag(root_path, method: "get", class: 'form form-inline')
+              .form-group
+                h4 Vérifiez que vous pouvez profiter des services d'Alfred
+                .col-xs-offset-2.col-xs-8
+                = text_field_tag :search, nil, placeholder: "13 rue du service 59000 LILLE", class: 'input-lg form-control search-location', id: 'user_input_autocomplete_address', value: params[:search]
+                button.btn.btn-primary type="submit" Valider
 
       .row.card-home
         .col-lg-12.col-xs-12
-          - if @service_available
-            form action="#{services_path}"
-             .col-xs-offset-3.col-xs-8
-              select.form-control name="prestation" id="prestation" onchange="submit()"
-                option disabled="" selected="" value=""
-                  | - Choisissez ce qu'Alfred peut faire pour vous ;-)!
-                - @categories.each do |category|
-                  option
-                    = category
-          - else
-            p Il va falloir déménager pour utiliser Service Auto !
+          - if params[:search]
+            - if @service_available
+              h4 Super ! Alfred peut intervenir ...
+              form action="#{services_path}"
+               .col-xs-offset-3.col-xs-6
+                select.form-control name="prestation" id="prestation" onchange="submit()"
+                  option disabled="" selected="" value=""
+                    | - Choisissez ce qu'Alfred peut faire pour vous ;-)!
+                  - @categories.each do |category|
+                    option
+                      = category
+            - else
+              p Il va falloir déménager pour utiliser les services d'Alfred !
+
+                    = link_to "Vous voulez faire une nouvelle recherche d'adresse ?", root_path
 
 .container_banner2
   h2 Les prestations d'Alfred
@@ -54,12 +60,21 @@ div class="banner_commentcamarche" id="section1"
     h2 Comment ça marche ?
 
     .row
-      .col-xs-4.col-md-4
-        .card_commentcamarche_1
-      .col-xs-4.col-md-4
-        .card_commentcamarche_2
-      .col-xs-4.col-md-4
-        .card_commentcamarche_3
+      .col-xs-4.col-md-4.text-center
+        = image_tag('http://res.cloudinary.com/dtngvyuf6/image/upload/v1458834392/Alfred_sans_fond-01_bmp8sw.png', class: 'img-responsive', style: "height: 300px; width: 400px;")
+        h3 Je prends rendez-vous
+        p  Je réserve mon service Alfred. Date de rendez-vous, lieu de prise en charge du véhicule, service demandé ... sans stress Alfred est à mon écoute.
+      .col-xs-4.col-md-4.text-center
+        = image_tag('http://res.cloudinary.com/dtngvyuf6/image/upload/v1458834421/Alfred_sans_fond-02_x9gfwv.png', class: 'img-responsive', style: "height: 300px; width: 400px;")
+        h3 Je rencontre Alfred
+        p  À l'heure et lieu du rendez-vous Alfred récupère mes clés et réalise le service demander. Pendant ce temp, je profite !
+
+
+      .col-xs-4.col-md-4.text-center
+        = image_tag('http://res.cloudinary.com/dtngvyuf6/image/upload/v1458834342/Alfred_sans_fond-03_ajw1h6.png', class: 'img-responsive', style:"height: 300px; width: 400px;")
+        h3 Je récupère mon véhicule
+        p  Je récupère mon véhicule au lieu et à l'heure indiqués, et je garde le contact avec Alfred si je le souhaite ;-) !
+
 
 
 .banner_nostarifs

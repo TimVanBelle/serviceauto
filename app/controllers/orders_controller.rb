@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  skip_before_action :authenticate_user!, only: :create
 
   def edit
     authorize current_order
@@ -6,10 +7,10 @@ class OrdersController < ApplicationController
   end
 
   def create
+    authorize current_order
     current_order.make_order
     current_order.save!(validate: false)
 
-    authorize current_order
     redirect_to action: :edit
   end
 
