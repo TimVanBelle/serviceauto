@@ -34,7 +34,7 @@
                 input class="form-control" name="order[start_date]"
                 span class="input-group-addon"
                   span class="glyphicon glyphicon-calendar"
-            = f.input :pick_up_place, placeholder: 'Lieu de prise en charge'
+            = f.input :pick_up_place, label: false, placeholder: 'Lieu de prise en charge'
 
 
             h3 Date et lieu de retour :
@@ -43,11 +43,11 @@
                 input class="form-control" name="order[end_date]"
                 span class="input-group-addon"
                   span class="glyphicon glyphicon-calendar"
-            = f.input :return_place, placeholder: 'Lieu de retour'
+            = f.input :return_place, label: false, placeholder: 'Lieu de retour'
 
             h3 Commentaire :
             .form-group
-              = f.input :comment, as: :text, row:"4"
+              = f.input :comment, label: false, as: :text, row:"4"
 
             = f.submit 'Valider', class: 'btn btn-primary btn-block'
 
