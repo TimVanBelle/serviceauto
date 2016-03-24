@@ -1,55 +1,47 @@
 .container
- .div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3"
-   .formulairerecapcde2
+  .row
+    .col-xs-12.col-sm-8.col-sm-offset-2
+     .formulaireprofil
+        .header
+          h2 Veuillez régler votre commande :
+        .row
+          .col-xs-12
+            .content
+              h3 Vos prestations
+              table.table.table-striped
+                tbody
+                  - current_order.order_items.each do |item|
+                   tr
+                     td = item.service.title
+                     td.text-right = "#{item.service.price} euros"
 
+                  tr
+                   td Les frais d'intervention d'Alfred
+                   td.text-right 25 euros
+                  tr.order-total
+                   td Total
+                   td.text-right = "#{current_order.total} euros"
 
-       h2 Veuillez régler votre commande :
+              h3 Votre vehicule
+              p
+                - car = Car.find(@order.car_id)
+                = car.car_maker
+                '-
+                = car.model
+                '-
+                = car.color
 
-       / h3 Résumé :
+              h3 Lieu et date de prise en charge
+              p Date : #{current_order.start_date}
+              p Adresse : #{current_order.pick_up_place}
 
-       fieldset
-         legend Votre vehicule
-         p
-          - car = Car.find(@order.car_id)
-          '#{car.car_maker} - #{car.model} - #{car.color}
+              h3 Lieu et date de restitution
+              p Date : #{current_order.end_date}
+              p Adresse : #{current_order.return_place}
 
-       fieldset
-         legend Vos prestations
+              = form_tag order_payments_path do
+                article
+                  label.amount
+                    span Amount: = current_order.subtotal
 
-       - current_order.order_items.each do |item|
-
-         div
-           .col-xs-8
-             p = item.service.title
-           .col-xs-4
-             p = "#{item.service.price} euros"
-       div
-         .col-xs-8
-           p Les frais d'intervention d'Alfred
-         .col-xs-4
-           p 25 euros
-       div
-           .col-xs-8
-            p Total
-            - price = current_order.total
-           .col-xs-4
-            p = "#{price} euros"
-
-       fielset
-         legend Lieu et date de prise en charge
-         p Date : #{current_order.start_date}
-         p Adresse : #{current_order.pick_up_place}
-
-       fielset
-         legend Lieu et date de restitution
-         p Date : #{current_order.end_date}
-         p Adresse : #{current_order.return_place}
-
-         div class="col-xs-12 col-xs-offset-3"
-       / = current_order.id
-       = form_tag order_payments_path do
-         article
-           label.amount
-             span Amount: = current_order.subtotal
-
-             script.stripe-button data-amount="#{current_order.total * 100}" data-currency="EUR" data-description="Groom commande #{current_order.id}" data-key="#{Rails.configuration.stripe[:publishable_key]}" data-name="Ma réservation de groom" src="https://checkout.stripe.com/checkout.js"
+                    script.stripe-button data-amount="#{current_order.total * 100}" data-currency="EUR" data-description="Groom commande #{current_order.id}" data-key="#{Rails.configuration.stripe[:publishable_key]}" data-name="Ma réservation de groom" src="https://checkout.stripe.com/checkout.js"

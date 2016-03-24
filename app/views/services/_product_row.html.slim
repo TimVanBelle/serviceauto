@@ -1,0 +1,12 @@
+.col-xs-12.col-sm-4
+  .service-item class="#{service.category.delete(' ')}"
+    .service-item--content
+      .title
+        h4 = service.title
+      .desc
+        p = service.content
+      .price
+        span style="color: #EE5F5B" = number_to_currency service.price
+      = form_for service, url: cart_cart_items_path, method: :post, remote: true do |f|
+        = f.hidden_field :service_id, value: service.id
+        = f.submit "Reservez", class: "btn btn-primary btn-block"

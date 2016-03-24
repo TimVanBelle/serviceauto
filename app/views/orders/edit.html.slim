@@ -1,82 +1,74 @@
-div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3"
-  .formulaireprofil
-    .row
-      .col-xs-12
-        h2 Votre commande
-        - current_order.order_items.each do |item|
-          div
-            .col-xs-8
-              p = item.service.title
-            .col-xs-4
-              p = "#{item.service.price} euros"
+.container
+  .row
+    .col-xs-12.col-sm-8.col-sm-offset-2
+      .formulaireprofil
+        .header
+          h2 Votre commande
+        .row
+          .col-xs-12
+            table.table.table-striped
+              tbody
+                - current_order.order_items.each do |item|
+                  tr
+                    td = item.service.title
+                    td.text-right = "#{item.service.price} euros"
 
-        div
-          .col-xs-8
-            p Les frais d'intervention d'Alfred
-          .col-xs-4
-            p 25 euros
-        div
-          .col-xs-8
-            p Total
-            .col-xs-4
-              p = "#{current_order.total} euros"
+                tr
+                  td Les frais d'intervention d'Alfred
+                  td.text-right 25 euros
+                tr.order-total
+                  td Total
+                  td.text-right = "#{current_order.total} euros"
 
-    .row
-      .col-xs-12
-        = simple_form_for current_order do |f|
-          fieldset
-            legend Votre voiture
-            .col-xs-12
-              - if current_user.cars.count > 0
-                = f.input :car_id, label: " ", collection: current_user.cars.map {|v,k| ["#{v.car_maker} - #{v.model} - #{v.color} ", v.id]}, selected: current_user.cars.first.id
-              p
-                = link_to "Ajouter une voiture", new_order_car_path, class: "links"
+        .content
+          = simple_form_for current_order do |f|
+            h3 Votre voiture
+            - if current_user.cars.count > 0
+              = f.input :car_id, label: " ", collection: current_user.cars.map {|v,k| ["#{v.car_maker} - #{v.model} - #{v.color} ", v.id]}, selected: current_user.cars.first.id
+            p
+              = link_to "Ajouter une voiture", new_order_car_path, class: "btn btn-default"
 
-          fieldset
-            legend Date et lieu de prise en charge :
-            .col-xs-12
-              .form-group
-                .input-group.date id='datetimepicker6'
-                  input class="form-control" name="order[start_date]"
-                  span class="input-group-addon"
-                    span class="glyphicon glyphicon-calendar"
-              = f.input :pick_up_place, placeholder: 'Lieu de prise en charge'
-                = text_field_tag :search, nil, placeholder: "renseigner une adresse de prise en charge", class: 'input-lg form-control', id: 'user_input_autocomplete_address'
-
-
-          fieldset
-            legend Date et lieu de retour :
-            .col-xs-12
-              .form-group
-                .input-group.date id='datetimepicker7'
-                  input class="form-control" name="order[end_date]"
-                  span class="input-group-addon"
-                    span class="glyphicon glyphicon-calendar"
-              = f.input :return_place, placeholder: 'Lieu de retour'
-                = text_field_tag :search, nil, placeholder: "renseigner une adresse de retour", class: 'input-lg form-control', id: 'user_input_autocomplete_address'
-
-          fieldset
-            legend Commentaire :
-
+            h3 Date et lieu de prise en charge :
             .form-group
-              .col-xs-12
-                = f.input :comment, as: :text, row:"4"
-
-              div
-                .col-xs-12
-                  = f.submit 'Valider', class: 'btn btn-default col-xs-12 text-center', id:"log"
-
+              .input-group.date id='datetimepicker6'
+                input class="form-control" name="order[start_date]"
+                span class="input-group-addon"
+                  span class="glyphicon glyphicon-calendar"
+            = f.input :pick_up_place, placeholder: 'Lieu de prise en charge'
 
 
-  - content_for :javascripts
-    javascript:
-      $(function () {
-        $('#datetimepicker6').datetimepicker().data("DateTimePicker").minDate(new Date());
-        $('#datetimepicker7').datetimepicker({
-          useCurrent: false //Important! See issue #1075
-        });
+            h3 Date et lieu de retour :
+            .form-group
+              .input-group.date id='datetimepicker7'
+                input class="form-control" name="order[end_date]"
+                span class="input-group-addon"
+                  span class="glyphicon glyphicon-calendar"
+            = f.input :return_place, placeholder: 'Lieu de retour'
 
-        $("#datetimepicker6").on("dp.change", function (e) {
-          $('#datetimepicker7').data("DateTimePicker").minDate(e.date.add(4, 'hours'));
-        });
-      });
+            h3 Commentaire :
+            .form-group
+              = f.input :comment, as: :text, row:"4"
+
+            = f.submit 'Valider', class: 'btn btn-primary btn-block'
+
+        - content_for :javascripts
+          javascript:
+            $(function () {
+              $('#datetimepicker6').datetimepicker().data("DateTimePicker").minDate(new Date());
+              $('#datetimepicker7').datetimepicker({
+                useCurrent: false //Important! See issue #1075
+              });
+
+              $("#datetimepicker6").on("dp.change", function (e) {
+                $('#datetimepicker7').data("DateTimePicker").minDate(e.date.add(4, 'hours'));
+              });
+
+              google.maps.event.addDomListener(window, 'load', function() {
+                initializeAutocomplete('order_pick_up_place');
+              });
+
+              google.maps.event.addDomListener(window, 'load', function() {
+                initializeAutocomplete('order_return_place');
+              });
+            });
+

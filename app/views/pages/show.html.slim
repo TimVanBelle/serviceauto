@@ -26,23 +26,6 @@
                   = category
           .col-xs-3 style=("\n    text-align: left;\n")
 
-.container_banner2
-
-  br
-  h2 Les prestations d'Alfred
-  br
-  .row
-    .col-xs-4.col-md-4 style=("padding: 10 10 10%")
-      = link_to "services?prestation=entretien", class: "card_entretien"
-        .card-category Entretien
-    .col-xs-4.col-md-4 style=("padding: 10 10 10%")
-      = link_to "services?prestation=carte+grise", class: "card_demarches"
-        .card-category Démarches carte grise
-    .col-xs-4.col-md-4 style=("padding: 10 10 10%")
-      = link_to "services?prestation=lavage", class: "card_lavage"
-        .card-category Lavage
-  br
-  br
 
 .container_banner2
 
@@ -57,6 +40,25 @@
     .col-xs-4.col-md-4 style=("padding: 10 10 10%")
       .card_commentcamarche_3
   br
+
+  h2 Les prestations d'Alfred
+
+  .row
+    .col-xs-4.col-md-4
+      .card_entretien
+        = link_to "services?prestation=entretien"
+          .card-category
+            'Entretien
+    .col-xs-4.col-md-4
+      .card_demarches
+        = link_to "services?prestation=carte+grise"
+          .card-category
+            'Démarches carte grise
+    .col-xs-4.col-md-4
+      .card_lavage
+        = link_to "services?prestation=lavage"
+          .card-category
+            'Lavage
 
 
 .banner_nostarifs

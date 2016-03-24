@@ -1,8 +1,9 @@
 
-<div class="container">
+<div class="container container-min-size">
    <div class="col-xs-12 col-sm-6  col-sm-offset-3 col-md-6 col-md-offset-3">
      <div class="login">
        <div class="formulaire">
+       <h2>Inscrivez-vous</h2>
        <p>Alfred est un service de conciergerie automobile. Avec Alfred vous gagnez du temps en toute sereinité. Profitez ... pour le reste il y a Alfred ;-)!</p>
          <div class="row">
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -11,17 +12,17 @@
 
            <%= f.fields_for :profils do |p| %>
 
-             <div class="form-inputs">
+            <div class="form-inputs">
             <%= p.input :first_name, label: false, placeholder:'Prenom'%>
             <%= p.input :last_name, label: false, placeholder:'Nom'%>
             <%= p.input :address, label: false, placeholder:'Adresse'%>
             <%= p.input :picture %>
             <% end %>
-            <%= f.input :email,label: false, placeholder:'Email', required: true, autofocus: true, autocomplete: "off" %>
+            <%= f.input :email,label: false, placeholder:'Email', required: true, autocomplete: "off" %>
             <%= f.input :password, label: false, placeholder: 'Mot de passe', required: true, hint: ("#{@minimum_password_length} caracteres minimum" if @minimum_password_length) %>
 
             <%= f.input :password_confirmation,label: false, placeholder:'confirmation de mot de passe', required: true, autofocus: true, autocomplete: "off" %>
-            <%= f.submit class: 'btn btn-block', value: "Je m'inscris" %>
+            <%= f.submit class: 'btn btn-block btn-primary', value: "Je m'inscris" %>
 
               <% end %>
            <%= render "devise/shared/links" %>

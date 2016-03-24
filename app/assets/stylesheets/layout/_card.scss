@@ -1,15 +1,23 @@
-
 @mixin card {
-  height: 375px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  height: 275px;
   background-size: cover !important;
   color: white;
-  bottom: 10px;
   z-index: 10;
-  display: flex;
-  align-item: center;
-  flex-item: 0 0 20%;
-  margin-top: 0px
+  position: relative;
+
+  a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255,0.4);
+
+    &:hover{
+      background-color: rgba(255,255,255,0.6);
+      color: darker;
+    }
+  }
 }
 
 
@@ -66,12 +74,11 @@
   top: 10px;
 }
 .card-category {
-  position: relative;
+  position: absolute;
   top: 10px;
-  left: 10px;
+  left: 30px;
   font-size: 20px;
   text-transform: uppercase;
-  text-shadow: 0 1px 3px rgb(51, 51, 51);
 }
 .card-description {
   position: absolute;

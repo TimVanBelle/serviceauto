@@ -1,22 +1,24 @@
 .formulaireprofil {
-  padding: 50px;
-  padding-top: 5px;
-  background-color: #5CA4A9;
-  border: #CCC 1px solid;
-  color: white;
-  width: 100%;
+  margin: 50px 0;
+  border: $green 3px solid;
   border-radius: 5px;
+  padding-bottom: 20px;
+
+  .header {
+    background-color: $green;
+    height: 120px;
+    text-align: center;
+    padding-top: 40px;
+  }
 
   h2 {
-    text-decoration: underline;
-    font-size: 25px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    color: #FFF;
+    margin-top: 0;
   }
 
   p {
     font-size: 14px;
-    color: white;
+    color: grey;
     margin: 0.5em 0;
   }
 
@@ -26,6 +28,21 @@
 
   btn-default {
     background-color: grey;
+  }
+
+  .order-total {
+    font-weight: bolder;
+  }
+
+  .content {
+    padding: 0 15px;
+  }
+
+  h3 {
+    font-size: 22px;
+    margin-top: 30px;
+    border-bottom: $green 2px solid;
+    margin-bottom: 20px;
   }
 }
 
@@ -162,4 +179,13 @@
   text-decoration: underline;
   font-size: 25px;
 }
+}
+
+
+.profil .profil-part{
+  margin-bottom: 40px;
+}
+
+.btn + .btn {
+  margin-left: 5px;
 }
