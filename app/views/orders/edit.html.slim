@@ -51,9 +51,6 @@
 
             = f.submit 'Valider', class: 'btn btn-primary btn-block'
 
-
-
-
         - content_for :javascripts
           javascript:
             $(function () {
@@ -65,4 +62,13 @@
               $("#datetimepicker6").on("dp.change", function (e) {
                 $('#datetimepicker7').data("DateTimePicker").minDate(e.date.add(4, 'hours'));
               });
+
+              google.maps.event.addDomListener(window, 'load', function() {
+                initializeAutocomplete('order_pick_up_place');
+              });
+
+              google.maps.event.addDomListener(window, 'load', function() {
+                initializeAutocomplete('order_return_place');
+              });
             });
+

@@ -16,16 +16,17 @@
 
       .row.card-home
         .col-lg-12.col-xs-12
-        form action="#{services_path}"
-          .col-xs-offset-3.col-xs-8
-            select.form-control name="prestation" id="prestation" onchange="submit()"
-              option disabled="" selected="" value=""
-                | - Choisissez ce qu'Alfred peut faire pour vous ;-)!
-              - @categories.each do |category|
-                option
-                  = category
-          .col-xs-3 style=("\n    text-align: left;\n")
-
+          - if @service_available
+            form action="#{services_path}"
+             .col-xs-offset-3.col-xs-8
+              select.form-control name="prestation" id="prestation" onchange="submit()"
+                option disabled="" selected="" value=""
+                  | - Choisissez ce qu'Alfred peut faire pour vous ;-)!
+                - @categories.each do |category|
+                  option
+                    = category
+          - else
+            p Il va falloir déménager pour utiliser Service Auto !
 
 .container_banner2
   h2 Les prestations d'Alfred
@@ -50,21 +51,15 @@
 
 div class="banner_commentcamarche" id="section1"
   .container
+    h2 Comment ça marche ?
+
     .row
-      .col-lg-12.col-xs-12 style=("padding: 10px 0 100px 0;")
-        h2 Comment faire avec Alfred ?
-        .row
-          .col-xs-4.col-md-4 style=("padding: 10 10 10%")
-            = link_to "services?prestation=entretien", class: "card_entretien"
-              .card-category Entretien
-          .col-xs-4.col-md-4 style=("padding: 10 10 10%")
-            = link_to "services?prestation=carte+grise", class: "card_demarches"
-              .card-category Démarches carte grise
-          .col-xs-4.col-md-4 style=("padding: 10 10 10%")
-            = link_to "services?prestation=lavage", class: "card_lavage"
-              .card-category Lavage
-
-
+      .col-xs-4.col-md-4
+        .card_commentcamarche_1
+      .col-xs-4.col-md-4
+        .card_commentcamarche_2
+      .col-xs-4.col-md-4
+        .card_commentcamarche_3
 
 
 .banner_nostarifs
