@@ -6,7 +6,7 @@
       .row
         .col-lg-12.col-xs-12 style=("padding-bottom: 100px")
           h1 PROFITEZ DU MEILLEUR
-          h4 réservez les services de notre concierge auto Alfred
+          h4 Réservez les services de notre concierge auto Alfred
           br
           - unless params[:search]
             = form_tag(root_path, method: "get", class: 'form form-inline')
@@ -29,10 +29,11 @@
                   - @categories.each do |category|
                     option
                       = category
+                / = link_to "Vous voulez faire une nouvelle recherche d'adresse ?", root_path
             - else
               p Il va falloir déménager pour utiliser les services d'Alfred !
 
-                    = link_to "Vous voulez faire une nouvelle recherche d'adresse ?", root_path
+              = link_to "Vous voulez faire une nouvelle recherche d'adresse ?", root_path
 
 .container_banner2
   h2 Les prestations d'Alfred
