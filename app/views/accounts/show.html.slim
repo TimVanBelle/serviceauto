@@ -54,25 +54,26 @@
             th Retour du véhicule
         tbody
           - @orders.each do |order|
-            td
-              - car = Car.find(order.car_id)
-              = car.car_maker
-              ' -
-              = car.model
-              ' -
-              = car.color
-            td
-              ul
-                - order.order_items.each do |order_item|
-                  li = order_item.service.title
-            td
-              ul
-                li = I18n.localize order.start_date, format: :long
-                li = order.pick_up_place
-            td
-              ul
-                li = I18n.localize order.end_date, format: :long
-                li = order.return_place
+            tr
+              td
+                - car = Car.find(order.car_id)
+                = car.car_maker
+                ' -
+                = car.model
+                ' -
+                = car.color
+              td
+                ul
+                  - order.order_items.each do |order_item|
+                    li = order_item.service.title
+              td
+                ul
+                  li = I18n.localize order.start_date, format: :long
+                  li = order.pick_up_place
+              td
+                ul
+                  li = I18n.localize order.end_date, format: :long
+                  li = order.return_place
 
 
 

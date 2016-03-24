@@ -16,7 +16,7 @@
                      td.text-right = "#{item.service.price} euros"
 
                   tr
-                   td Les frais d'intervention d'Alfred
+                   td Frais d'intervention d'Alfred
                    td.text-right 25 euros
                   tr.order-total
                    td Total
@@ -32,11 +32,15 @@
                 = car.color
 
               h3 Lieu et date de prise en charge
-              p Date : #{current_order.start_date}
+              p
+              'Date :
+              = I18n.localize @order.start_date, format: :long
               p Adresse : #{current_order.pick_up_place}
 
               h3 Lieu et date de restitution
-              p Date : #{current_order.end_date}
+              p
+              'Date :
+              = I18n.localize @order.end_date, format: :long
               p Adresse : #{current_order.return_place}
 
               = form_tag order_payments_path do

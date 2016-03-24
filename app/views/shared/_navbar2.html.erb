@@ -31,7 +31,7 @@
           </form>
         </li>
 
-        <li><a href="#" class="[ animate ]">A propos</a></li>
+        <li><a href="/#section1" class="[ animate ] scroll-down">Comment ça marche ?</a></li>
 
         <% if user_signed_in? %>
         <li>
@@ -48,13 +48,12 @@
           <%end%>
         </li>
 
-
-
-        <%= render 'layouts/cart_text' %>
-
-        <li class="dropdown">
-
+      <% if current_order.id %>
+        <li class="cart-text-hitbox">
+          <%= render 'layouts/cart_text' %>
         </li>
+      <% end %>
+
 
       </form>
     </div>
