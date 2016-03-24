@@ -4,6 +4,7 @@
       .formulaire
         h2 Ajoutez un vehicule
         = simple_form_for(@car) do |r|
+
           div class="row"
             = r.error_notification
             div class="form-inputs"
@@ -13,6 +14,7 @@
               = r.input :registration_plate, label: false, placeholder:'Immatriculation'
               = r.input :mileage, label: false, placeholder:'Kilomètrage'
               = r.submit "Valider", class: "btn btn-primary"
+
 
 
 
