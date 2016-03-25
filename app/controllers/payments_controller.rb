@@ -25,7 +25,7 @@ class PaymentsController < ApplicationController
   @order.pay
   @order.save!
   authorize @order
-  redirect_to account_path
+  redirect_to account_path(anchor: "reservations")
 
 rescue Stripe::CardError => e
   flash[:error] = e.message
