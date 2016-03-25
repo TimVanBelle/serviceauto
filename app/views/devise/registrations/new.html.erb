@@ -15,7 +15,7 @@
             <div class="form-inputs">
             <%= p.input :first_name, label: false, placeholder:'Prénom'%>
             <%= p.input :last_name, label: false, placeholder:'Nom'%>
-            <%= p.input :address, label: false, placeholder:'Adresse'%>
+            <%= p.input :address, label: false, placeholder:'Adresse', id:'user_input_autocomplete_address'%>
             <%= p.input :picture,label: 'Photo' %>
             <% end %>
             <%= f.input :email,label: false, placeholder:'Email', required: true, autocomplete: "off" %>
